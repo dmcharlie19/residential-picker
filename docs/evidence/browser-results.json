@@ -1,0 +1,12 @@
+{
+  "passed": [
+    "invalid form",
+    "three distinct demo complexes within budget",
+    "all three cities",
+    "mobile 360px no horizontal overflow",
+    "empty results",
+    "server failure is distinct from no results",
+    "real catalog has no synthetic apartments"
+  ],
+  "pageErrors": []
+}

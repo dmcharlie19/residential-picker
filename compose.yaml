@@ -1,0 +1,74 @@
+name: residential-picker
+services:
+  mysql:
+    image: mysql:8.4
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_0900_ai_ci", "--default-storage-engine=InnoDB"]
+    environment:
+      MYSQL_DATABASE: residential_picker
+      MYSQL_USER: residential_app
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Set MYSQL_PASSWORD in .env}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in .env}
+    ports: ["127.0.0.1:13306:3306"]
+    volumes: ["mysql-data:/var/lib/mysql"]
+    healthcheck:
+      test: ["CMD-SHELL", 'MYSQL_PWD="$$MYSQL_PASSWORD" mysql --protocol=TCP -h 127.0.0.1 -u "$$MYSQL_USER" "$$MYSQL_DATABASE" -e "SELECT 1" >/dev/null']
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: mysql+pymysql://residential_app:${MYSQL_PASSWORD:?Set MYSQL_PASSWORD in .env}@mysql:3306/residential_picker?charset=utf8mb4
+      DEMO_MODE: "false"
+      AREA_TOLERANCE_RATIO: "0.10"
+      PRICE_MAX_AGE_DAYS: "30"
+    ports: ["127.0.0.1:8000:8000"]
+    volumes: ["./data:/data:ro"]
+    depends_on:
+      mysql: {condition: service_healthy}
+  frontend:
+    build: ./frontend
+    environment: {API_UPSTREAM: "backend:8000"}
+    ports: ["127.0.0.1:8080:80"]
+    depends_on: [backend]
+  demo-mysql:
+    profiles: [demo]
+    image: mysql:8.4
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_0900_ai_ci", "--default-storage-engine=InnoDB"]
+    environment:
+      MYSQL_DATABASE: residential_picker_demo
+      MYSQL_USER: demo_app
+      MYSQL_PASSWORD: demo_local_only
+      MYSQL_ROOT_PASSWORD: demo_root_local_only
+    ports: ["127.0.0.1:13307:3306"]
+    volumes: ["demo-mysql-data:/var/lib/mysql"]
+    healthcheck:
+      test: ["CMD-SHELL", 'MYSQL_PWD="$$MYSQL_PASSWORD" mysql --protocol=TCP -h 127.0.0.1 -u "$$MYSQL_USER" "$$MYSQL_DATABASE" -e "SELECT 1" >/dev/null']
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+  demo-backend:
+    profiles: [demo]
+    build: ./backend
+    environment:
+      DATABASE_URL: mysql+pymysql://demo_app:demo_local_only@demo-mysql:3306/residential_picker_demo?charset=utf8mb4
+      DEMO_MODE: "true"
+      AREA_TOLERANCE_RATIO: "0.10"
+      PRICE_MAX_AGE_DAYS: "30"
+    ports: ["127.0.0.1:8001:8000"]
+    volumes: ["./data:/data:ro"]
+    depends_on:
+      demo-mysql: {condition: service_healthy}
+  demo-frontend:
+    profiles: [demo]
+    build: ./frontend
+    environment: {API_UPSTREAM: "demo-backend:8000"}
+    ports: ["127.0.0.1:8081:80"]
+    depends_on: [demo-backend]
+volumes:
+  mysql-data:
+    name: residential-picker-mysql-data
+  demo-mysql-data:
+    name: residential-picker-demo-mysql-data

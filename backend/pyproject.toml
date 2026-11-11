@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "residential-picker"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+  "fastapi>=0.119,<1", "pydantic>=2.12,<3", "SQLAlchemy>=2.0.44,<2.1",
+  "alembic>=1.17,<2", "PyMySQL>=1.1,<2", "uvicorn>=0.38,<1", "cryptography>=46,<49"
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
