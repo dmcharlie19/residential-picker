@@ -68,8 +68,8 @@ def test_query_aliases_precision_duplicates_and_unknown():
 
 
 @pytest.mark.parametrize("demo,url", [
-    (True,"mysql+pymysql://x@localhost/residential_picker"),
-    (False,"mysql+pymysql://x@localhost/residential_picker_demo"),
+    (True,"sqlite:///catalog.sqlite3"),
+    (False,"sqlite:///catalog-demo.sqlite3"),
 ])
 def test_database_modes_cannot_mix(demo,url):
     with pytest.raises(ValueError):
@@ -179,11 +179,11 @@ def test_db_constraints_and_cyrillic_decimal(db_session):
                      starting_price_rub=1,updated_at=NOW,is_active=True,is_demo=False))
     with pytest.raises((IntegrityError, OperationalError)) as rejected:
         db_session.commit()
-    assert rejected.value.orig.args[0] == 3819
+    assert "CHECK constraint failed" in str(rejected.value.orig)
     db_session.rollback()
 
 
-def test_window_query_uses_bounded_selects_on_ten_thousand_lots(db_session,mysql_engine):
+def test_window_query_uses_bounded_selects_on_ten_thousand_lots(db_session,database_engine):
     complexes=[complex_row(db_session,f"scale-{i}") for i in range(100)]
     data=[dict(complex_id=c.id,external_id=f"lot-{j}",rooms=2,area_m2=Decimal("50")+Decimal(j)/100,
                starting_price_rub=10000000+j,updated_at=NOW,is_active=True,is_demo=False,imported_at=NOW)
@@ -194,17 +194,17 @@ def test_window_query_uses_bounded_selects_on_ten_thousand_lots(db_session,mysql
     def capture(conn,cursor,statement,parameters,context,executemany):
         if statement.lstrip().upper().startswith("SELECT"):
             statements.append(statement)
-    event.listen(mysql_engine,"before_cursor_execute",capture)
+    event.listen(database_engine,"before_cursor_execute",capture)
     try:
         r=search(db_session,query(),now=NOW,config=CONFIG)
     finally:
-        event.remove(mysql_engine,"before_cursor_execute",capture)
+        event.remove(database_engine,"before_cursor_execute",capture)
     assert r.count==3 and len(statements)<=3
     stmt=lots_statement(city="Сочи",budget=Decimal("20000000"),area=Decimal("50"),
                         now=NOW,tolerance=Decimal(".10"),max_age=30,demo_mode=False)
-    compiled=stmt.compile(mysql_engine,compile_kwargs={"literal_binds":True})
-    plan=db_session.execute(text("EXPLAIN "+str(compiled))).mappings().all()
-    assert any(row["key"] for row in plan if row["table"] in ("residential_complexes","apartment_lots"))
+    compiled=stmt.compile(database_engine,compile_kwargs={"literal_binds":True})
+    plan=db_session.execute(text("EXPLAIN QUERY PLAN "+str(compiled))).mappings().all()
+    assert any("INDEX" in row["detail"] for row in plan)
 
 
 @pytest.fixture
@@ -257,7 +257,7 @@ def test_api_database_failure_is_not_empty_success(client,monkeypatch):
 
 
 @pytest.mark.parametrize("kind", ["duplicate-slug", "duplicate-lot", "foreign-key", "rooms"])
-def test_mysql_rejects_invalid_relationships_and_duplicates(db_session, kind):
+def test_sqlite_rejects_invalid_relationships_and_duplicates(db_session, kind):
     c=complex_row(db_session)
     lot_row(db_session,c)
     db_session.commit()
@@ -282,3 +282,25 @@ def test_complex_import_rejects_future_date():
     payload={**complex_snapshot, "complexes":[{**complex_snapshot["complexes"][0],"price_observed_on":"2099-01-01"}]}
     with pytest.raises(ValueError):
         ComplexSnapshot.model_validate(payload)
+
+
+def test_maximum_price_preserves_every_kopeck(db_session):
+    c=complex_row(db_session)
+    lot=lot_row(db_session,c,starting_price_rub=Decimal("99999999999999.99"))
+    db_session.commit()
+    db_session.expire_all()
+    assert db_session.get(L,lot.id).starting_price_rub==Decimal("99999999999999.99")
+    assert search(db_session,query(budget="99999999999999.98"),now=NOW,config=CONFIG).count==0
+    assert search(db_session,query(budget="99999999999999.99"),now=NOW,config=CONFIG).count==1
+
+
+def test_fractional_upper_area_never_rounds_up(db_session):
+    c=complex_row(db_session)
+    lot_row(db_session,c,area_m2=Decimal("55.28"))
+    assert search(db_session,query(area="50.25"),now=NOW,config=CONFIG).count==0
+
+
+@pytest.mark.parametrize("url",["sqlite://", "sqlite:///:memory:", "sqlite:///file:test?mode=memory&uri=true", "mysql+pymysql://x@localhost/catalog"])
+def test_only_file_backed_sqlite_allowed(url):
+    with pytest.raises(ValueError):
+        Settings(database_url=url,demo_mode=False)

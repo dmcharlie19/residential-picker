@@ -1,54 +1,53 @@
 # КВАДРАТ — подбор квартир в ЖК
 
-Готовое локальное приложение: Python/FastAPI + React/TypeScript/Vite + MySQL 8.4. Пользователь вводит город, бюджет и желаемую площадь; получает до трёх разных ЖК с полной стоимостью квартиры или явно обозначенным расчётом.
-
-## Открыть приложение
-
-- Реальный каталог: http://localhost:8080 — импортированы 15 ЖК; исходных реальных квартир нет.
-- Демонстрация: http://localhost:8081 — отдельная база с вымышленными ЖК и квартирами, заметно помеченными в интерфейсе.
-
-Демо-параметры: любой из трёх городов, бюджет 20 000 000 ₽, площадь 50 м². Результат — три разных ЖК. На реальных данных пустая выдача ожидаема до импорта свежих лотов или датированных цен.
+Python/FastAPI + React/TypeScript/Vite + SQLite в файле. Отдельный сервер базы данных и пароли не нужны.
 
 ## Запуск
 
-Нужны Docker Desktop (Linux containers) и Docker Compose v2. В PowerShell из корня проекта:
+```powershell
+docker compose up -d --build
+```
+
+Открыть http://localhost:8080. Backend: http://localhost:8000.
+
+Файл базы на компьютере: **data/residential-picker.sqlite3**. В контейнере тот же файл доступен как /app/storage/residential-picker.sqlite3 через bind mount. Пересоздание контейнера его не удаляет. Рядом могут находиться служебные файлы -wal и -shm.
+
+В текущий файл перенесены 15 ЖК из прежнего каталога. Реальных квартир в исходных данных нет, поэтому пустая выдача до импорта лотов или свежих датированных цен ожидаема.
+
+Для новой пустой базы после запуска backend:
 
 ```powershell
-./scripts/init-env.ps1
-docker compose up -d --build
 docker compose exec -T backend python -m app.cli complexes-import /data/complexes.snapshot.json
 ```
 
-После первого up дождаться запуска backend (миграции выполняются автоматически). Отдельная демонстрация:
+## Без Docker
+
+Нужен Python >=3.13. Из корня проекта:
 
 ```powershell
-./scripts/run-demo.ps1
+python -m venv .venv
+./.venv/Scripts/python.exe -m pip install -r backend/requirements.lock
+cd backend
+../.venv/Scripts/python.exe -m alembic upgrade head
+../.venv/Scripts/python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
-.env с локальными случайными паролями создаётся автоматически; не включать его в git. Данные MySQL сохраняются в отдельных volumes. Не использовать down -v для обычной остановки.
+По умолчанию используется тот же файл data/residential-picker.sqlite3. Из другого терминала: cd frontend; npm ci; npm run dev. Для frontend нужен Node >=20.19. При необходимости путь меняется переменной DATABASE_URL (SQLite URL с абсолютным путём).
 
-## Что реализовано
+## Подбор и данные
 
-- Две основные таблицы: ЖК и квартиры-лоты; миграции Alembic.
-- Один поисковый endpoint: GET /api/v1/search?city=Сочи&budget=20000000&area=50.
-- Один лучший лот на ЖК, максимум три карточки; площадь от желаемой до +10%, бюджет — жёсткий максимум.
-- Актуальность 30 суток; снятые и устаревшие предложения исключаются.
-- Расчёт по м² только при отсутствии реальных записей лотов и наличии свежей датированной цены.
-- Backend CLI для импорта, обновления, снятия квартиры и генерации изолированных demo-данных.
-- Минималистичный чёрно-белый интерфейс; мобильная версия; источники цены и сдачи, обработка ошибок.
-- Настройки AREA_TOLERANCE_RATIO и PRICE_MAX_AGE_DAYS находятся только на backend.
+- Один endpoint: GET /api/v1/search?city=Сочи&budget=20000000&area=50.
+- До трёх разных ЖК; площадь от желаемой до +10%; бюджет — жёсткий максимум.
+- Актуальность 30 суток; снятые и устаревшие лоты исключаются.
+- Расчёт по м² допустим только при отсутствии реальных записей лотов и наличии свежей датированной цены.
+- Две основные таблицы: residential_complexes и apartment_lots.
+- Деньги хранятся целыми копейками, площадь — сотыми долями м²; API по-прежнему возвращает десятичные строки.
+- Импорт и обновление через backend CLI. В Compose только backend и frontend, без demo-сервисов.
 
 ## Проверки
 
-Backend (создаёт и очищает только residential_picker_test):
-
 ```powershell
 ./scripts/test-backend.ps1
-```
-
-Frontend: Node >=20.19 и npm.
-
-```powershell
 cd frontend
 npm ci
 npm test
@@ -57,19 +56,6 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-Браузерные проверки требуют запущенных real/demo приложений с импортированными данными. Можно задать REAL_URL, DEMO_URL и BROWSER_EXECUTABLE_PATH. Подробности импорта и обслуживания описаны в runbook.
+Backend-тесты работают с отдельным временным SQLite-файлом, не затрагивая каталог. Браузерной проверке нужен запущенный основной интерфейс; BASE_URL и BROWSER_EXECUTABLE_PATH позволяют изменить адрес и Chromium.
 
-Последняя проверка: 51 backend-тест на MySQL, 12 frontend-тестов, 7 сценариев Chromium; сборки Python и Vite работают. Подробности: [результаты](docs/verification.md).
-
-## Документы
-
-- [План и состояние задач](PLAN.md).
-- [Архитектура и модель БД](docs/architecture.md).
-- [Контракт API](docs/api.md).
-- [Алгоритм подбора](docs/search.md).
-- [Происхождение данных](docs/data.md).
-- [Запуск, импорт, резервное копирование](docs/runbook.md).
-- [Скриншот настольной версии](docs/evidence/desktop-results.png).
-- [Скриншот мобильной версии](docs/evidence/mobile-results.png).
-
-Публичное размещение не выполнялось. Источники рыночных цен заново не проверялись при разработке; в реальную базу не добавлялись вымышленные квартиры.
+[Архитектура](docs/architecture.md) · [API](docs/api.md) · [Алгоритм](docs/search.md) · [Обслуживание](docs/runbook.md) · [Проверки](docs/verification.md) · [План](PLAN.md)
