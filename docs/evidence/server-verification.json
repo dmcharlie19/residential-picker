@@ -1,0 +1,25 @@
+{
+  "url": "https://vibrationpanel.ru:4443/residential/",
+  "hostOverride": "192.168.31.170",
+  "count": 5,
+  "rooms": [
+    1,
+    2
+  ],
+  "assets": [
+    "/residential/assets/index-D82icC1v.js",
+    "/residential/assets/index-CL9rV8ae.css"
+  ],
+  "checks": [
+    "TLS page",
+    "base path assets",
+    "base path API",
+    "brand link",
+    "room filter",
+    "ascending prices",
+    "unlimited results",
+    "mobile layout",
+    "empty result"
+  ],
+  "pageErrors": []
+}

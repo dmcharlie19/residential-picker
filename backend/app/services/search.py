@@ -1,8 +1,8 @@
 from datetime import datetime, timezone
-from decimal import Decimal, ROUND_HALF_UP, localcontext
+from decimal import Decimal, ROUND_HALF_UP
 from sqlalchemy.orm import Session
 from app.config import settings
-from app.repositories.search import find_estimates, find_lots
+from app.repositories.search import find_lots
 from app.schemas.search import ComplexResponse, LotResponse, MatchResponse, QueryResponse, SearchQuery, SearchResponse
 
 
@@ -27,8 +27,8 @@ def search(session: Session, query: SearchQuery, *, now=None, config=None) -> Se
         now = now.astimezone(timezone.utc).replace(tzinfo=None)
     matches = []
     rows = find_lots(
-        session, city=query.city, budget=query.budget_rub, area=query.desired_area_m2,
-        now=now, tolerance=config.area_tolerance_ratio, max_age=config.price_max_age_days,
+        session, city=query.city, budget=query.budget_rub, rooms=query.rooms,
+        now=now, max_age=config.price_max_age_days,
         demo_mode=config.demo_mode,
     )
     for c, lot in rows:
@@ -42,28 +42,12 @@ def search(session: Session, query: SearchQuery, *, now=None, config=None) -> Se
             price_source_url=lot.source_url, price_observed_on=lot.updated_at.date().isoformat(),
             warnings=["DEMO_DATA"] if config.demo_mode else [],
         ))
-    if len(matches) < 3 and not config.demo_mode:
-        candidates = find_estimates(
-            session, city=query.city, budget=query.budget_rub, area=query.desired_area_m2,
-            now=now, max_age=config.price_max_age_days, limit=3-len(matches),
-        )
-        for c in candidates:
-            with localcontext() as ctx:
-                ctx.prec = 40
-                total = (query.desired_area_m2 * c.min_price_m2).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
-            if total <= query.budget_rub:
-                matches.append(MatchResponse(
-                    complex=complex_response(c), match_type="estimate", lot=None,
-                    matched_area_m2=money(query.desired_area_m2), estimated_price_rub=money(total),
-                    price_source_url=c.price_source_url, price_observed_on=c.price_observed_on.isoformat(),
-                    warnings=["ESTIMATED_PRICE"],
-                ))
-    warnings = ["INSUFFICIENT_MATCHES"] if len(matches) < 3 else []
+    warnings = []
     if config.demo_mode:
         warnings.append("DEMO_DATA")
     return SearchResponse(
         query=QueryResponse(city=query.city, budget_rub=money(query.budget_rub),
-                            desired_area_m2=money(query.desired_area_m2)),
+                            rooms=query.rooms),
         generated_at=iso_utc(now), demo_mode=config.demo_mode,
         count=len(matches), results=matches, warnings=warnings,
     )

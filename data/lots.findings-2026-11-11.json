@@ -1,0 +1,2881 @@
+{
+  "checked_on": "2026-11-11",
+  "summaries": {
+    "sochi-kislorod": {
+      "found": 101,
+      "imported": 5,
+      "source_updated_at": "2026-11-10T23:42:49.654Z"
+    },
+    "sochi-olivia": {
+      "found": 173,
+      "imported": 1,
+      "source_updated_at": "2026-10-21T11:52:12.945Z"
+    },
+    "sochi-otrazhenie": {
+      "found": 62,
+      "imported": 3,
+      "source_updated_at": "2026-10-21T11:55:12.567Z"
+    },
+    "sochi-luidzhi": {
+      "found": 184,
+      "imported": 5,
+      "source_updated_at": "2026-11-10T23:52:04.166Z"
+    },
+    "sochi-svetskiy-les": {
+      "found": 1095,
+      "imported": 5,
+      "source_updated_at": "2026-10-21T11:41:42.000Z"
+    },
+    "moscow-mod": {
+      "found": 110,
+      "imported": 5,
+      "source_updated_at": "2026-11-06"
+    },
+    "moscow-symphony-34": {
+      "found": 143,
+      "imported": 5,
+      "source_updated_at": "2026-11-06"
+    },
+    "moscow-sydney-city": {
+      "found": 139,
+      "imported": 5,
+      "source_updated_at": "2026-11-06"
+    },
+    "moscow-soul": {
+      "found": 124,
+      "imported": 5,
+      "source_updated_at": "2026-11-06"
+    },
+    "spb-avant": {
+      "found": 5,
+      "imported": 5,
+      "source_updated_at": "индивидуальная дата price_history.created_at, new_price = price"
+    },
+    "spb-neva-haus": {
+      "found": 5,
+      "imported": 5,
+      "source_updated_at": "индивидуальная дата price_history.created_at, new_price = price"
+    },
+    "spb-petrovskaya-dominanta": {
+      "found": 3,
+      "imported": 3,
+      "source_updated_at": "индивидуальная дата price_history.created_at, new_price = price"
+    },
+    "spb-defans-premium": {
+      "found": 6,
+      "imported": 6,
+      "source_updated_at": "индивидуальная дата price_history.created_at, new_price = price"
+    },
+    "spb-akvilon-lives": {
+      "found": 5,
+      "imported": 4,
+      "source_updated_at": "индивидуальная дата price_history.created_at, new_price = price"
+    },
+    "moscow-ostrov": {
+      "found": 5,
+      "imported": 5
+    }
+  },
+  "findings": [
+    {
+      "complex_slug": "sochi-kislorod",
+      "source_url": "https://realty5.ru/api/complex/115/lots",
+      "source_updated_at": "2026-11-10T23:42:49.654Z",
+      "available_with_price": 101,
+      "complete": 101,
+      "sample": [
+        {
+          "id": 32954,
+          "building": "Литер 2 / Секция 1",
+          "number": "2",
+          "floor": 1,
+          "rooms": 0,
+          "area": 25,
+          "price": 10112500,
+          "status": "free",
+          "planUrl": "/complexes/own/115/lots/31aac0f692a0.webp",
+          "polygon": "M 2131 2579 L 2355 2579 L 2373 2534 L 2428 2457 L 2512 2402 L 2552 2387 L 2595 2393 L 2586 2578 L 3132 2577 L 3136 5084 L 2144 5078 L 2137 2578 Z",
+          "photos": "[]",
+          "floorPlanId": 866,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 866,
+            "imageUrl": "/complexes/objects/4181/plans/plan_13069.r5.svg?v=6",
+            "svgViewBox": "0 0 9393 5919"
+          }
+        },
+        {
+          "id": 33003,
+          "building": "Литер 9 / Секция 1",
+          "number": "2",
+          "floor": 1,
+          "rooms": 0,
+          "area": 24.7,
+          "price": 9991150,
+          "status": "free",
+          "planUrl": "/complexes/own/115/lots/287649fc74aa.webp",
+          "polygon": "M 1437 1850 L 1597 1850 L 1617 1813 L 1656 1755 L 1705 1720 L 1733 1711 L 1778 1716 L 1768 1848 L 2164 1849 L 2168 3667 L 1448 3665 L 1436 3665 L 1441 3295 L 1443 1850 Z",
+          "photos": "[]",
+          "floorPlanId": 886,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 886,
+            "imageUrl": "/complexes/objects/4181/plans/plan_13082.r5.svg?v=6",
+            "svgViewBox": "0 0 8065 3792"
+          }
+        },
+        {
+          "id": 32956,
+          "building": "Литер 2 / Секция 1",
+          "number": "4",
+          "floor": 1,
+          "rooms": 2,
+          "area": 50.7,
+          "price": 16908450,
+          "status": "free",
+          "planUrl": "/complexes/own/115/lots/678a4b3bd403.webp",
+          "polygon": "M 261 453 L 1279 462 L 1279 580 L 1279 2023 L 1656 2027 L 1656 2634 L 1282 2641 L 1273 4623 L 1267 5084 L 252 5083 Z",
+          "photos": "[]",
+          "floorPlanId": 866,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 866,
+            "imageUrl": "/complexes/objects/4181/plans/plan_13069.r5.svg?v=6",
+            "svgViewBox": "0 0 9393 5919"
+          }
+        },
+        {
+          "id": 33005,
+          "building": "Литер 9 / Секция 1",
+          "number": "4",
+          "floor": 1,
+          "rooms": 2,
+          "area": 50.4,
+          "price": 16808400,
+          "status": "free",
+          "planUrl": "/complexes/own/115/lots/12f95f3f3913.webp",
+          "polygon": "M 81 311 L 836 315 L 833 396 L 818 395 L 817 1452 L 1094 1449 L 1096 1890 L 817 1897 L 814 3676 L 62 3667 Z",
+          "photos": "[]",
+          "floorPlanId": 886,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 886,
+            "imageUrl": "/complexes/objects/4181/plans/plan_13082.r5.svg?v=6",
+            "svgViewBox": "0 0 8065 3792"
+          }
+        },
+        {
+          "id": 33056,
+          "building": "Литер 15 / Секция 1",
+          "number": "4",
+          "floor": 1,
+          "rooms": 2,
+          "area": 49.3,
+          "price": 16140820,
+          "status": "free",
+          "planUrl": "/complexes/own/115/lots/69a193ed9cd5.webp",
+          "polygon": "M 81 311 L 836 315 L 833 396 L 818 395 L 817 1452 L 1094 1449 L 1096 1890 L 817 1897 L 814 3676 L 62 3667 Z",
+          "photos": "[]",
+          "floorPlanId": 862,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 862,
+            "imageUrl": "/complexes/objects/4181/plans/plan_13075.r5.svg?v=6",
+            "svgViewBox": "0 0 8065 3792"
+          }
+        }
+      ],
+      "selected_source_rows": [
+        {
+          "id": 36298,
+          "building": "Литер 10 / Секция 1",
+          "number": "252",
+          "floor": 17,
+          "rooms": 0,
+          "area": 23.1,
+          "price": 7530600,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 4855 1352 L 4983 1354 L 4980 1455 L 4994 1453 L 5033 1446 L 5067 1421 L 5094 1392 L 5124 1354 L 5388 1350 L 5389 97 L 4855 97 Z",
+          "photos": "[]",
+          "floorPlanId": 845,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 845,
+            "imageUrl": "/complexes/objects/4181/plans/plan_11869.r5.svg?v=6",
+            "svgViewBox": "0 0 6000 2707"
+          }
+        },
+        {
+          "id": 33631,
+          "building": "Литер 12 / Секция 1",
+          "number": "50",
+          "floor": 4,
+          "rooms": 1,
+          "area": 38.9,
+          "price": 12448000,
+          "status": "free",
+          "planUrl": "/complexes/own/115/lots/7df7626fdb90.webp",
+          "polygon": "M 4812 1797 L 5302 1800 L 5303 1971 L 5373 1967 L 5442 1935 L 5482 1899 L 5500 1866 L 5526 1801 L 6411 1798 L 6406 156 L 4815 160 L 4814 545 Z",
+          "photos": "[]",
+          "floorPlanId": 852,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 852,
+            "imageUrl": "/complexes/objects/4181/plans/plan_13322.r5.svg?v=6",
+            "svgViewBox": "0 0 9409 4387"
+          }
+        },
+        {
+          "id": 294244,
+          "building": "Литер 4",
+          "number": "57",
+          "floor": 4,
+          "rooms": 2,
+          "area": 43.5,
+          "price": 14507250,
+          "status": "free",
+          "planUrl": null,
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        },
+        {
+          "id": 33619,
+          "building": "Литер 11 / Секция 1",
+          "number": "50",
+          "floor": 4,
+          "rooms": 3,
+          "area": 67.1,
+          "price": 20062900,
+          "status": "free",
+          "planUrl": "/complexes/own/115/lots/cfdaed37c0e0.webp",
+          "polygon": "M 4465 1277 L 4732 1277 L 4754 1237 L 4780 1212 L 4812 1194 L 4831 1187 L 4852 1181 L 4860 1184 L 4858 1276 L 4951 1278 L 4952 985 L 5673 987 L 5672 1274 L 5819 1275 L 5820 1838 L 5440 1838 L 5442 2222 L 5557 2223 L 5563 2506 L 4457 2501 L 4457 2404 L 4467 2347 Z",
+          "photos": "[]",
+          "floorPlanId": 848,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 848,
+            "imageUrl": "/complexes/objects/4181/plans/plan_11866.r5.svg?v=6",
+            "svgViewBox": "0 0 6000 2605"
+          }
+        },
+        {
+          "id": 33830,
+          "building": "Литер 11 / Секция 1",
+          "number": "68",
+          "floor": 5,
+          "rooms": 0,
+          "area": 23.4,
+          "price": 7534800,
+          "status": "free",
+          "planUrl": "/complexes/own/115/lots/66a871cd4a91.webp",
+          "polygon": "M 3018 1276 L 3536 1278 L 3536 1396 L 3535 2345 L 3548 2407 L 3548 2507 L 3022 2501 Z",
+          "photos": "[]",
+          "floorPlanId": 848,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 848,
+            "imageUrl": "/complexes/objects/4181/plans/plan_11866.r5.svg?v=6",
+            "svgViewBox": "0 0 6000 2605"
+          }
+        }
+      ],
+      "limitation": null
+    },
+    {
+      "complex_slug": "sochi-olivia",
+      "source_url": "https://realty5.ru/api/complex/85/lots",
+      "source_updated_at": "2026-10-21T11:52:12.945Z",
+      "available_with_price": 173,
+      "complete": 0,
+      "sample": [
+        {
+          "id": 21326,
+          "building": "Дом 11 / Секция 1",
+          "number": "2к1",
+          "floor": 2,
+          "rooms": null,
+          "area": 25.3,
+          "price": 13788500,
+          "status": "free",
+          "planUrl": null,
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        },
+        {
+          "id": 21126,
+          "building": "Дом 7 / Секция 1",
+          "number": "2к10",
+          "floor": 2,
+          "rooms": null,
+          "area": 44.6,
+          "price": 25422000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 1485 1455 L 1769 1455 L 1768 1363 L 1794 1363 L 1822 1377 L 1854 1401 L 1865 1419 L 1872 1433 L 1877 1455 L 2204 1455 L 2203 2262 L 1801 2262 L 1800 2383 L 1432 2381 L 1433 2221 L 1485 2220 L 1486 1455 Z",
+          "photos": "[]",
+          "floorPlanId": 642,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 642,
+            "imageUrl": "/complexes/objects/4915/plans/plan_13177.r5.svg?v=6",
+            "svgViewBox": "0 0 10119 2547"
+          }
+        },
+        {
+          "id": 21222,
+          "building": "Дом 3 / Секция 1",
+          "number": "2к10",
+          "floor": 2,
+          "rooms": null,
+          "area": 44.7,
+          "price": 25479000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 1484 1456 L 1766 1454 L 1767 1364 L 1786 1363 L 1814 1371 L 1853 1392 L 1866 1423 L 1875 1444 L 1881 1455 L 2204 1455 L 2204 2267 L 1803 2263 L 1801 2380 L 1433 2380 L 1433 2218 L 1485 2218 L 1486 1455 Z",
+          "photos": "[]",
+          "floorPlanId": 639,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 639,
+            "imageUrl": "/complexes/objects/4915/plans/plan_13174.r5.svg?v=6",
+            "svgViewBox": "0 0 10119 2547"
+          }
+        },
+        {
+          "id": 21127,
+          "building": "Дом 7 / Секция 1",
+          "number": "2к11",
+          "floor": 2,
+          "rooms": null,
+          "area": 54.3,
+          "price": 31765500,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 442 1680 L 1098 1681 L 1099 1455 L 1193 1453 L 1192 1363 L 1216 1364 L 1242 1373 L 1278 1398 L 1294 1417 L 1305 1454 L 1515 1455 L 1515 2260 L 1463 2259 L 1463 2381 L 1097 2384 L 1097 2260 L 441 2260 Z",
+          "photos": "[]",
+          "floorPlanId": 642,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 642,
+            "imageUrl": "/complexes/objects/4915/plans/plan_13177.r5.svg?v=6",
+            "svgViewBox": "0 0 10119 2547"
+          }
+        },
+        {
+          "id": 21191,
+          "building": "Дом 2 / Секция 1",
+          "number": "2к11",
+          "floor": 2,
+          "rooms": null,
+          "area": 54.3,
+          "price": 30951000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 442 1681 L 1099 1681 L 1099 1455 L 1195 1452 L 1191 1365 L 1217 1366 L 1243 1373 L 1277 1398 L 1292 1414 L 1300 1430 L 1305 1455 L 1515 1455 L 1517 2259 L 1463 2259 L 1463 2383 L 1094 2383 L 1095 2261 L 438 2264 Z",
+          "photos": "[]",
+          "floorPlanId": 638,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 638,
+            "imageUrl": "/complexes/objects/4915/plans/plan_13173.r5.svg?v=6",
+            "svgViewBox": "0 0 10119 2547"
+          }
+        }
+      ],
+      "selected_source_rows": [],
+      "limitation": "Нет комнатности"
+    },
+    {
+      "complex_slug": "sochi-otrazhenie",
+      "source_url": "https://realty5.ru/api/complex/130/lots",
+      "source_updated_at": "2026-10-21T11:55:12.567Z",
+      "available_with_price": 59,
+      "complete": 0,
+      "sample": [
+        {
+          "id": 48165,
+          "building": "БС 1-2 / Секция 1",
+          "number": "1",
+          "floor": 2,
+          "rooms": null,
+          "area": 106.95,
+          "price": 40213200,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 1548 3203 L 1659 3122 L 1668 3134 L 1772 3052 L 2064 2825 L 2037 2784 L 2199 2671 L 2104 2533 L 2206 2466 L 2208 2399 L 2215 2364 L 2230 2342 L 2245 2349 L 2295 2409 L 2311 2400 L 2151 2152 L 2171 2140 L 2837 1753 L 2868 1724 L 3010 1654 L 3226 1984 L 2946 2204 L 3214 2497 L 3218 2523 L 2005 3738 L 1739 3455 Z",
+          "photos": "[]",
+          "floorPlanId": 1038,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 1038,
+            "imageUrl": "/complexes/objects/2308/plans/plan_13532.png",
+            "svgViewBox": "0 0 3458 3932"
+          }
+        },
+        {
+          "id": 48170,
+          "building": "БС 1-2 / Секция 1",
+          "number": "6",
+          "floor": 2,
+          "rooms": null,
+          "area": 78.56,
+          "price": 29538560,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 562 266 L 2649 268 L 2670 673 L 2477 691 L 1946 764 L 1715 787 L 1624 806 L 1601 851 L 1582 872 L 1556 890 L 1540 893 L 1506 816 L 1251 854 L 855 903 L 750 917 L 754 929 L 601 950 L 577 634 L 558 261 Z",
+          "photos": "[]",
+          "floorPlanId": 1038,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 1038,
+            "imageUrl": "/complexes/objects/2308/plans/plan_13532.png",
+            "svgViewBox": "0 0 3458 3932"
+          }
+        },
+        {
+          "id": 48202,
+          "building": "БС 1-2 / Секция 1",
+          "number": "13",
+          "floor": 3,
+          "rooms": null,
+          "area": 79.66,
+          "price": 30111480,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 562 266 L 2649 268 L 2670 673 L 2477 691 L 1946 764 L 1715 787 L 1624 806 L 1601 851 L 1582 872 L 1556 890 L 1540 893 L 1506 816 L 1251 854 L 855 903 L 750 917 L 754 929 L 601 950 L 577 634 L 558 261 Z",
+          "photos": "[]",
+          "floorPlanId": 1038,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 1038,
+            "imageUrl": "/complexes/objects/2308/plans/plan_13532.png",
+            "svgViewBox": "0 0 3458 3932"
+          }
+        },
+        {
+          "id": 48205,
+          "building": "БС 1-2 / Секция 2",
+          "number": "67",
+          "floor": 3,
+          "rooms": null,
+          "area": 34,
+          "price": 12784000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 1580 4779 L 1615 4780 L 1631 4648 L 1671 4649 L 1717 4682 L 1777 4788 L 1810 4436 L 1853 4445 L 2197 4481 L 2968 4575 L 3055 4581 L 3250 4603 L 3209 5198 L 1564 5198 L 1580 4781 Z",
+          "photos": "[]",
+          "floorPlanId": 1039,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 1039,
+            "imageUrl": "/complexes/objects/2308/plans/plan_13533.r5.svg?v=6",
+            "svgViewBox": "0 0 4385 5323"
+          }
+        },
+        {
+          "id": 48211,
+          "building": "БС 1-2 / Секция 2",
+          "number": "73",
+          "floor": 3,
+          "rooms": null,
+          "area": 70.52,
+          "price": 24682000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 1602 895 L 1885 544 L 2242 151 L 4029 1917 L 3624 2365 L 3590 2405 L 2860 1845 L 2794 1795 L 2724 1900 L 2704 1887 L 2678 1866 L 2667 1825 L 2667 1776 L 2667 1728 L 2673 1712 L 2348 1466 L 1763 1014 L 1607 885 Z",
+          "photos": "[]",
+          "floorPlanId": 1039,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 1039,
+            "imageUrl": "/complexes/objects/2308/plans/plan_13533.r5.svg?v=6",
+            "svgViewBox": "0 0 4385 5323"
+          }
+        }
+      ],
+      "selected_source_rows": [],
+      "limitation": "Нет комнатности"
+    },
+    {
+      "complex_slug": "sochi-luidzhi",
+      "source_url": "https://realty5.ru/api/complex/322/lots",
+      "source_updated_at": "2026-11-10T23:52:04.166Z",
+      "available_with_price": 184,
+      "complete": 184,
+      "sample": [
+        {
+          "id": 301019,
+          "building": "Корпус 10",
+          "number": "1",
+          "floor": 2,
+          "rooms": 3,
+          "area": 86.68,
+          "price": 33622500,
+          "status": "free",
+          "planUrl": "/complexes/own/322/lots/b83a8ad06b0f544a9f8328f0.webp",
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        },
+        {
+          "id": 301088,
+          "building": "Корпус 10",
+          "number": "150",
+          "floor": 2,
+          "rooms": 1,
+          "area": 37.6,
+          "price": 13357500,
+          "status": "free",
+          "planUrl": "/complexes/own/322/lots/a288a9363b4b58a493468ef3.webp",
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        },
+        {
+          "id": 301089,
+          "building": "Корпус 10",
+          "number": "153",
+          "floor": 2,
+          "rooms": 3,
+          "area": 80.05,
+          "price": 29535000,
+          "status": "free",
+          "planUrl": "/complexes/own/322/lots/a41e9d785d1b57be97309bec.webp",
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        },
+        {
+          "id": 301090,
+          "building": "Корпус 10",
+          "number": "154",
+          "floor": 2,
+          "rooms": 1,
+          "area": 37.6,
+          "price": 13357500,
+          "status": "free",
+          "planUrl": "/complexes/own/322/lots/01e11f732a02519481bc3e56.webp",
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        },
+        {
+          "id": 301091,
+          "building": "Корпус 10",
+          "number": "155",
+          "floor": 2,
+          "rooms": 1,
+          "area": 36.05,
+          "price": 12862500,
+          "status": "free",
+          "planUrl": "/complexes/own/322/lots/73484c9dc15b5f74836cbb4e.webp",
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        }
+      ],
+      "selected_source_rows": [
+        {
+          "id": 301091,
+          "building": "Корпус 10",
+          "number": "155",
+          "floor": 2,
+          "rooms": 1,
+          "area": 36.05,
+          "price": 12862500,
+          "status": "free",
+          "planUrl": "/complexes/own/322/lots/73484c9dc15b5f74836cbb4e.webp",
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        },
+        {
+          "id": 301138,
+          "building": "Корпус 10",
+          "number": "262",
+          "floor": 2,
+          "rooms": 2,
+          "area": 47.49,
+          "price": 16935000,
+          "status": "free",
+          "planUrl": "/complexes/own/322/lots/8728833945c65675a73d6bf9.webp",
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        },
+        {
+          "id": 301141,
+          "building": "Корпус 10",
+          "number": "265",
+          "floor": 2,
+          "rooms": 3,
+          "area": 82.42,
+          "price": 29137500,
+          "status": "free",
+          "planUrl": "/complexes/own/322/lots/d32672adb6c4533792d1bde1.webp",
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        },
+        {
+          "id": 394698,
+          "building": "Корпус 10",
+          "number": "162",
+          "floor": 3,
+          "rooms": 1,
+          "area": 36.05,
+          "price": 13080000,
+          "status": "free",
+          "planUrl": "/complexes/own/322/lots/73484c9dc15b5f74836cbb4e.webp",
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        },
+        {
+          "id": 301064,
+          "building": "Корпус 10",
+          "number": "88",
+          "floor": 3,
+          "rooms": 1,
+          "area": 36.05,
+          "price": 13147500,
+          "status": "free",
+          "planUrl": "/complexes/own/322/lots/4a1954021a425b32987476c0.webp",
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        }
+      ],
+      "limitation": null
+    },
+    {
+      "complex_slug": "sochi-svetskiy-les",
+      "source_url": "https://realty5.ru/api/complex/105/lots",
+      "source_updated_at": "2026-10-21T11:41:42.000Z",
+      "available_with_price": 1095,
+      "complete": 1095,
+      "sample": [
+        {
+          "id": 16965,
+          "building": "Литер 4, Подъезд 1",
+          "number": "1",
+          "floor": 2,
+          "rooms": 3,
+          "area": 86.68,
+          "price": 35818000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 527 204 C 527 204 524 294 524 294 C 524 294 469 296 469 296 C 469 296 472 319 472 319 C 472 319 418 319 418 319 C 418 319 418 385 418 385 C 418 385 472 386 472 386 C 472 386 475 442 475 442 C 475 442 864 443 864 443 C 864 443 860 204 860 204 Z",
+          "photos": "[]",
+          "floorPlanId": 354,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 354,
+            "imageUrl": "/complexes/svetskiy-les/floors/2533_1776763880558.webp",
+            "svgViewBox": "0 0 960 447"
+          }
+        },
+        {
+          "id": 17621,
+          "building": "Литер 1, Подъезд 1",
+          "number": "1",
+          "floor": 2,
+          "rooms": 3,
+          "area": 86.68,
+          "price": 32590000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 527 204 C 527 204 524 294 524 294 C 524 294 469 296 469 296 C 469 296 472 319 472 319 C 472 319 418 319 418 319 C 418 319 418 385 418 385 C 418 385 472 386 472 386 C 472 386 475 442 475 442 C 475 442 864 443 864 443 C 864 443 860 204 860 204 Z",
+          "photos": "[]",
+          "floorPlanId": 463,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 463,
+            "imageUrl": "/complexes/svetskiy-les/floors/2540_1774335293137.webp",
+            "svgViewBox": "0 0 960 447"
+          }
+        },
+        {
+          "id": 18009,
+          "building": "Литер 2, Подъезд 1",
+          "number": "1",
+          "floor": 2,
+          "rooms": 3,
+          "area": 86.68,
+          "price": 33902000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 685 202 C 685 202 685 294 685 294 C 685 294 652 296 652 296 C 652 296 654 317 654 317 C 654 317 618 318 618 318 C 618 318 618 385 618 385 C 618 385 653 384 653 384 C 653 384 653 443 653 443 C 653 443 900 444 900 444 C 900 444 899 204 899 204 Z",
+          "photos": "[]",
+          "floorPlanId": 482,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 482,
+            "imageUrl": "/complexes/svetskiy-les/floors/2544_1775799260203.webp",
+            "svgViewBox": "0 0 960 447"
+          }
+        },
+        {
+          "id": 18471,
+          "building": "Литер 3, Подъезд 1",
+          "number": "1",
+          "floor": 2,
+          "rooms": 2,
+          "area": 85.63,
+          "price": 31507000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 555 214 C 555 214 553 443 553 443 C 553 443 881 443 881 443 C 881 443 882 166 882 166 C 882 166 768 161 768 161 C 768 161 767 216 767 216 Z",
+          "photos": "[]",
+          "floorPlanId": 549,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 549,
+            "imageUrl": "/complexes/svetskiy-les/floors/2548_1776230378858.webp",
+            "svgViewBox": "0 0 960 447"
+          }
+        },
+        {
+          "id": 18585,
+          "building": "Литер 3, Подъезд 2",
+          "number": "115",
+          "floor": 2,
+          "rooms": 1,
+          "area": 26.34,
+          "price": 13053000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 389 73 C 389 73 389 155 389 155 C 389 155 433 153 433 154 C 433 155 434 191 434 191 C 434 191 578 191 578 191 C 578 191 576 75 576 75 Z",
+          "photos": "[]",
+          "floorPlanId": 568,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 568,
+            "imageUrl": "/complexes/svetskiy-les/floors/2549_1776231309664.webp",
+            "svgViewBox": "0 0 960 447"
+          }
+        }
+      ],
+      "selected_source_rows": [
+        {
+          "id": 18585,
+          "building": "Литер 3, Подъезд 2",
+          "number": "115",
+          "floor": 2,
+          "rooms": 1,
+          "area": 26.34,
+          "price": 13053000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 389 73 C 389 73 389 155 389 155 C 389 155 433 153 433 154 C 433 155 434 191 434 191 C 434 191 578 191 578 191 C 578 191 576 75 576 75 Z",
+          "photos": "[]",
+          "floorPlanId": 568,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 568,
+            "imageUrl": "/complexes/svetskiy-les/floors/2549_1776231309664.webp",
+            "svgViewBox": "0 0 960 447"
+          }
+        },
+        {
+          "id": 17882,
+          "building": "Литер 1, Подъезд 4",
+          "number": "262",
+          "floor": 2,
+          "rooms": 2,
+          "area": 47.49,
+          "price": 19111000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        },
+        {
+          "id": 17773,
+          "building": "Литер 1, Подъезд 3",
+          "number": "153",
+          "floor": 2,
+          "rooms": 3,
+          "area": 80.05,
+          "price": 30560000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        },
+        {
+          "id": 17881,
+          "building": "Литер 1, Подъезд 4",
+          "number": "261",
+          "floor": 2,
+          "rooms": 1,
+          "area": 35.5,
+          "price": 14365000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        },
+        {
+          "id": 17624,
+          "building": "Литер 1, Подъезд 1",
+          "number": "4",
+          "floor": 2,
+          "rooms": 1,
+          "area": 35.7,
+          "price": 14449000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 521 3 C 521 3 525 117 525 117 C 525 117 862 118 862 118 C 862 118 852 0 852 0 Z",
+          "photos": "[]",
+          "floorPlanId": 463,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 463,
+            "imageUrl": "/complexes/svetskiy-les/floors/2540_1774335293137.webp",
+            "svgViewBox": "0 0 960 447"
+          }
+        }
+      ],
+      "limitation": null
+    },
+    {
+      "complex_slug": "moscow-mod",
+      "source_url": "https://mestoestate.ru/ru/complex/mod",
+      "source_updated_at": "2026-11-06",
+      "selected_source_rows": [
+        {
+          "complex_slug": "moscow-mod",
+          "external_id": "mesto:Мод 1 Оч. Корп. 5 Camus:258",
+          "rooms": 1,
+          "area_m2": "41.5",
+          "starting_price_rub": "26295271",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/mod",
+          "building": "Мод 1 Оч. Корп. 5 Camus",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-mod",
+          "external_id": "mesto:Мод 1 Оч. Корп. 5 Camus:89",
+          "rooms": 2,
+          "area_m2": "64.4",
+          "starting_price_rub": "36266924",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/mod",
+          "building": "Мод 1 Оч. Корп. 5 Camus",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-mod",
+          "external_id": "mesto:Мод 1 Оч. Корп. 5 Camus:120",
+          "rooms": 3,
+          "area_m2": "85.4",
+          "starting_price_rub": "46986055",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/mod",
+          "building": "Мод 1 Оч. Корп. 5 Camus",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-mod",
+          "external_id": "mesto:Мод 1 Оч. Корп. 5 Camus:555",
+          "rooms": 4,
+          "area_m2": "106.1",
+          "starting_price_rub": "59602629",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/mod",
+          "building": "Мод 1 Оч. Корп. 5 Camus",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-mod",
+          "external_id": "mesto:Мод 1 Оч. Корп. 5 Camus:306",
+          "rooms": 1,
+          "area_m2": "41.3",
+          "starting_price_rub": "26387726",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/mod",
+          "building": "Мод 1 Оч. Корп. 5 Camus",
+          "is_active": true,
+          "is_demo": false
+        }
+      ]
+    },
+    {
+      "complex_slug": "moscow-symphony-34",
+      "source_url": "https://mestoestate.ru/ru/complex/simfoniia-34",
+      "source_updated_at": "2026-11-06",
+      "selected_source_rows": [
+        {
+          "complex_slug": "moscow-symphony-34",
+          "external_id": "mesto:Симфония 34 1 Оч. Корп. Sienna (D):D-345",
+          "rooms": 1,
+          "area_m2": "27.8",
+          "starting_price_rub": "23733972",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/simfoniia-34",
+          "building": "Симфония 34 1 Оч. Корп. Sienna (D)",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-symphony-34",
+          "external_id": "mesto:Симфония 34 1 Оч. Корп. Silver (С):C-339",
+          "rooms": 2,
+          "area_m2": "59.4",
+          "starting_price_rub": "32707422",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/simfoniia-34",
+          "building": "Симфония 34 1 Оч. Корп. Silver (С)",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-symphony-34",
+          "external_id": "mesto:Симфония 34 1 Оч. Корп. Silver (С):C-011",
+          "rooms": 3,
+          "area_m2": "91.9",
+          "starting_price_rub": "42252403",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/simfoniia-34",
+          "building": "Симфония 34 1 Оч. Корп. Silver (С)",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-symphony-34",
+          "external_id": "mesto:Симфония 34 1 Оч. Корп. Crystal (B):B-453",
+          "rooms": 4,
+          "area_m2": "132.6",
+          "starting_price_rub": "90333087",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/simfoniia-34",
+          "building": "Симфония 34 1 Оч. Корп. Crystal (B)",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-symphony-34",
+          "external_id": "mesto:Симфония 34 1 Оч. Корп. Crystal (B):B-057",
+          "rooms": 1,
+          "area_m2": "40.8",
+          "starting_price_rub": "24595056",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/simfoniia-34",
+          "building": "Симфония 34 1 Оч. Корп. Crystal (B)",
+          "is_active": true,
+          "is_demo": false
+        }
+      ]
+    },
+    {
+      "complex_slug": "moscow-sydney-city",
+      "source_url": "https://mestoestate.ru/ru/complex/sidnei-siti",
+      "source_updated_at": "2026-11-06",
+      "selected_source_rows": [
+        {
+          "complex_slug": "moscow-sydney-city",
+          "external_id": "mesto:Сидней Сити 5 Оч. Корп. 6.2:263",
+          "rooms": 0,
+          "area_m2": "30.7",
+          "starting_price_rub": "23253040",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/sidnei-siti",
+          "building": "Сидней Сити 5 Оч. Корп. 6.2",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-sydney-city",
+          "external_id": "mesto:Сидней Сити 5 Оч. Корп. 6.1:165",
+          "rooms": 1,
+          "area_m2": "30.3",
+          "starting_price_rub": "23771835",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/sidnei-siti",
+          "building": "Сидней Сити 5 Оч. Корп. 6.1",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-sydney-city",
+          "external_id": "mesto:Сидней Сити 5 Оч. Корп. 6.2:224",
+          "rooms": 2,
+          "area_m2": "66.0",
+          "starting_price_rub": "38913732",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/sidnei-siti",
+          "building": "Сидней Сити 5 Оч. Корп. 6.2",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-sydney-city",
+          "external_id": "mesto:Сидней Сити 1 Оч. Корп.:6",
+          "rooms": 3,
+          "area_m2": "76.6",
+          "starting_price_rub": "342817025",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/sidnei-siti",
+          "building": "Сидней Сити 1 Оч. Корп.",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-sydney-city",
+          "external_id": "mesto:Сидней Сити 4 Оч. Корп. 5.2:657",
+          "rooms": 4,
+          "area_m2": "113.7",
+          "starting_price_rub": "77175922",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/sidnei-siti",
+          "building": "Сидней Сити 4 Оч. Корп. 5.2",
+          "is_active": true,
+          "is_demo": false
+        }
+      ]
+    },
+    {
+      "complex_slug": "moscow-soul",
+      "source_url": "https://mestoestate.ru/ru/complex/soul",
+      "source_updated_at": "2026-11-06",
+      "selected_source_rows": [
+        {
+          "complex_slug": "moscow-soul",
+          "external_id": "mesto:Соул 3 Оч. Корп.:466",
+          "rooms": 0,
+          "area_m2": "28.8",
+          "starting_price_rub": "819628179",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/soul",
+          "building": "Соул 3 Оч. Корп.",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-soul",
+          "external_id": "mesto:Соул 3 Оч. Корп.:338",
+          "rooms": 1,
+          "area_m2": "43.3",
+          "starting_price_rub": "823877698",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/soul",
+          "building": "Соул 3 Оч. Корп.",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-soul",
+          "external_id": "mesto:Соул 3 Оч. Корп.:285",
+          "rooms": 2,
+          "area_m2": "58.9",
+          "starting_price_rub": "731349583",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/soul",
+          "building": "Соул 3 Оч. Корп.",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-soul",
+          "external_id": "mesto:Соул 3 Оч. Корп.:419",
+          "rooms": 3,
+          "area_m2": "85.4",
+          "starting_price_rub": "840058663",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/soul",
+          "building": "Соул 3 Оч. Корп.",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "moscow-soul",
+          "external_id": "mesto:Соул 3 Оч. Корп.:555",
+          "rooms": 4,
+          "area_m2": "113.9",
+          "starting_price_rub": "871775224",
+          "updated_at": "2026-11-06",
+          "source_url": "https://mestoestate.ru/ru/complex/soul",
+          "building": "Соул 3 Оч. Корп.",
+          "is_active": true,
+          "is_demo": false
+        }
+      ]
+    },
+    {
+      "complex_slug": "spb-avant",
+      "source_url": "https://spb.kvadroom.ru/complex/spb-avant",
+      "selected_source_rows": [
+        {
+          "complex_slug": "spb-avant",
+          "external_id": "kvadroom:170800",
+          "rooms": 3,
+          "area_m2": "122.12",
+          "starting_price_rub": "112265046",
+          "updated_at": "2026-11-04T01:27:22+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/170800",
+          "building": "BALANCE",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-avant",
+          "external_id": "kvadroom:170801",
+          "rooms": 2,
+          "area_m2": "73.72",
+          "starting_price_rub": "70434974",
+          "updated_at": "2026-11-04T01:27:22+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/170801",
+          "building": "BALANCE",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-avant",
+          "external_id": "kvadroom:170802",
+          "rooms": 2,
+          "area_m2": "73.81",
+          "starting_price_rub": "70520963",
+          "updated_at": "2026-11-04T01:27:22+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/170802",
+          "building": "BALANCE",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-avant",
+          "external_id": "kvadroom:170803",
+          "rooms": 3,
+          "area_m2": "111.69",
+          "starting_price_rub": "101307726",
+          "updated_at": "2026-11-04T01:27:22+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/170803",
+          "building": "BALANCE",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-avant",
+          "external_id": "kvadroom:170804",
+          "rooms": 3,
+          "area_m2": "99.21",
+          "starting_price_rub": "94222013",
+          "updated_at": "2026-11-04T01:27:22+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/170804",
+          "building": "BALANCE",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "source_sample": [
+        {
+          "id": 170800,
+          "rooms": 3,
+          "square": "122.12",
+          "price": 112265046,
+          "price_history": [
+            {
+              "old_price": 111153511,
+              "new_price": 112265046,
+              "different": 1111535,
+              "is_different_up": true,
+              "created_at": "2026-11-04T01:27:22+03:00"
+            },
+            {
+              "old_price": 110052981,
+              "new_price": 111153511,
+              "different": 1100530,
+              "is_different_up": true,
+              "created_at": "2026-09-29T01:18:54+03:00"
+            },
+            {
+              "old_price": 108963401,
+              "new_price": 110052981,
+              "different": 1089580,
+              "is_different_up": true,
+              "created_at": "2026-08-04T01:21:12+03:00"
+            },
+            {
+              "old_price": 108963348,
+              "new_price": 108963401,
+              "different": 53,
+              "is_different_up": true,
+              "created_at": "2026-06-26T01:21:16+03:00"
+            },
+            {
+              "old_price": 105789658,
+              "new_price": 108963348,
+              "different": 3173690,
+              "is_different_up": true,
+              "created_at": "2026-06-16T01:25:35+03:00"
+            },
+            {
+              "old_price": 101720830,
+              "new_price": 105789658,
+              "different": 4068828,
+              "is_different_up": true,
+              "created_at": "2026-05-05T01:21:18+03:00"
+            },
+            {
+              "old_price": 101720825,
+              "new_price": 101720830,
+              "different": 5,
+              "is_different_up": true,
+              "created_at": "2026-04-29T01:23:57+03:00"
+            },
+            {
+              "old_price": 101720830,
+              "new_price": 101720825,
+              "different": 5,
+              "is_different_up": false,
+              "created_at": "2026-04-16T01:23:11+03:00"
+            },
+            {
+              "old_price": 101720825,
+              "new_price": 101720830,
+              "different": 5,
+              "is_different_up": true,
+              "created_at": "2026-03-06T01:37:47+03:00"
+            },
+            {
+              "old_price": 100713688,
+              "new_price": 101720825,
+              "different": 1007137,
+              "is_different_up": true,
+              "created_at": "2026-03-03T01:20:10+03:00"
+            },
+            {
+              "old_price": 97780280,
+              "new_price": 100713688,
+              "different": 2933408,
+              "is_different_up": true,
+              "created_at": "2026-02-17T01:15:02+03:00"
+            },
+            {
+              "old_price": 87303821,
+              "new_price": 97780280,
+              "different": 10476459,
+              "is_different_up": true,
+              "created_at": "2026-02-03T01:14:52+03:00"
+            },
+            {
+              "old_price": 86439427,
+              "new_price": 87303821,
+              "different": 864394,
+              "is_different_up": true,
+              "created_at": "2025-12-31T01:14:57+03:00"
+            },
+            {
+              "old_price": 83488041,
+              "new_price": 86439427,
+              "different": 2951386,
+              "is_different_up": true,
+              "created_at": "2025-12-18T04:28:23+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 83488041,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-05-16T00:23:58+03:00"
+            }
+          ],
+          "price_per_squad": 919301,
+          "mortgage": {
+            "min_payment_per_mounth": 1302157.89,
+            "min_first_deposit": 22464235.7046
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/f8f3f6ea3966bd1f95a19ee5c12f9774.jpg",
+          "house_name": "BALANCE",
+          "floor": 2,
+          "total_floor": 11,
+          "delivered_date": 2027,
+          "renovation": null
+        },
+        {
+          "id": 170801,
+          "rooms": 2,
+          "square": "73.72",
+          "price": 70434974,
+          "price_history": [
+            {
+              "old_price": 69737598,
+              "new_price": 70434974,
+              "different": 697376,
+              "is_different_up": true,
+              "created_at": "2026-11-04T01:27:22+03:00"
+            },
+            {
+              "old_price": 69047127,
+              "new_price": 69737598,
+              "different": 690471,
+              "is_different_up": true,
+              "created_at": "2026-09-29T01:18:54+03:00"
+            },
+            {
+              "old_price": 68363492,
+              "new_price": 69047127,
+              "different": 683635,
+              "is_different_up": true,
+              "created_at": "2026-08-04T01:21:12+03:00"
+            },
+            {
+              "old_price": 66372322,
+              "new_price": 68363492,
+              "different": 1991170,
+              "is_different_up": true,
+              "created_at": "2026-06-16T01:25:35+03:00"
+            },
+            {
+              "old_price": 63819540,
+              "new_price": 66372322,
+              "different": 2552782,
+              "is_different_up": true,
+              "created_at": "2026-05-05T01:21:18+03:00"
+            },
+            {
+              "old_price": 63187664,
+              "new_price": 63819540,
+              "different": 631876,
+              "is_different_up": true,
+              "created_at": "2026-03-03T01:20:10+03:00"
+            },
+            {
+              "old_price": 61347246,
+              "new_price": 63187664,
+              "different": 1840418,
+              "is_different_up": true,
+              "created_at": "2026-02-17T01:15:02+03:00"
+            },
+            {
+              "old_price": 54774327,
+              "new_price": 61347246,
+              "different": 6572919,
+              "is_different_up": true,
+              "created_at": "2026-02-03T01:14:52+03:00"
+            },
+            {
+              "old_price": 54232007,
+              "new_price": 54774327,
+              "different": 542320,
+              "is_different_up": true,
+              "created_at": "2026-01-13T01:14:26+03:00"
+            },
+            {
+              "old_price": 52380311,
+              "new_price": 54232007,
+              "different": 1851696,
+              "is_different_up": true,
+              "created_at": "2025-12-18T04:28:23+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 52380311,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-05-16T00:23:58+03:00"
+            }
+          ],
+          "price_per_squad": 955439,
+          "mortgage": {
+            "min_payment_per_mounth": 816972.51,
+            "min_first_deposit": 14094038.2974
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/c28101d20e2b5f101742353b3e93ba83.jpg",
+          "house_name": "BALANCE",
+          "floor": 3,
+          "total_floor": 11,
+          "delivered_date": 2027,
+          "renovation": null
+        },
+        {
+          "id": 170802,
+          "rooms": 2,
+          "square": "73.81",
+          "price": 70520963,
+          "price_history": [
+            {
+              "old_price": 69822736,
+              "new_price": 70520963,
+              "different": 698227,
+              "is_different_up": true,
+              "created_at": "2026-11-04T01:27:22+03:00"
+            },
+            {
+              "old_price": 69131422,
+              "new_price": 69822736,
+              "different": 691314,
+              "is_different_up": true,
+              "created_at": "2026-09-29T01:18:54+03:00"
+            },
+            {
+              "old_price": 68446952,
+              "new_price": 69131422,
+              "different": 684470,
+              "is_different_up": true,
+              "created_at": "2026-08-04T01:21:12+03:00"
+            },
+            {
+              "old_price": 66453352,
+              "new_price": 68446952,
+              "different": 1993600,
+              "is_different_up": true,
+              "created_at": "2026-06-16T01:25:35+03:00"
+            },
+            {
+              "old_price": 63897454,
+              "new_price": 66453352,
+              "different": 2555898,
+              "is_different_up": true,
+              "created_at": "2026-05-05T01:21:18+03:00"
+            },
+            {
+              "old_price": 63264806,
+              "new_price": 63897454,
+              "different": 632648,
+              "is_different_up": true,
+              "created_at": "2026-03-03T01:20:10+03:00"
+            },
+            {
+              "old_price": 61422141,
+              "new_price": 63264806,
+              "different": 1842665,
+              "is_different_up": true,
+              "created_at": "2026-02-17T01:15:02+03:00"
+            },
+            {
+              "old_price": 54841198,
+              "new_price": 61422141,
+              "different": 6580943,
+              "is_different_up": true,
+              "created_at": "2026-02-03T01:14:52+03:00"
+            },
+            {
+              "old_price": 54298215,
+              "new_price": 54841198,
+              "different": 542983,
+              "is_different_up": true,
+              "created_at": "2025-12-31T01:14:57+03:00"
+            },
+            {
+              "old_price": 52444258,
+              "new_price": 54298215,
+              "different": 1853957,
+              "is_different_up": true,
+              "created_at": "2025-12-18T04:28:23+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 52444258,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-05-16T00:23:58+03:00"
+            }
+          ],
+          "price_per_squad": 955439,
+          "mortgage": {
+            "min_payment_per_mounth": 817969.9,
+            "min_first_deposit": 14111244.6963
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/36d91dd243e4073135bd499fa0718ec5.jpg",
+          "house_name": "BALANCE",
+          "floor": 3,
+          "total_floor": 11,
+          "delivered_date": 2027,
+          "renovation": null
+        },
+        {
+          "id": 170803,
+          "rooms": 3,
+          "square": "111.69",
+          "price": 101307726,
+          "price_history": [
+            {
+              "old_price": 100304679,
+              "new_price": 101307726,
+              "different": 1003047,
+              "is_different_up": true,
+              "created_at": "2026-11-04T01:27:22+03:00"
+            },
+            {
+              "old_price": 99311563,
+              "new_price": 100304679,
+              "different": 993116,
+              "is_different_up": true,
+              "created_at": "2026-09-29T01:18:54+03:00"
+            },
+            {
+              "old_price": 98328280,
+              "new_price": 99311563,
+              "different": 983283,
+              "is_different_up": true,
+              "created_at": "2026-08-04T01:21:12+03:00"
+            },
+            {
+              "old_price": 95464350,
+              "new_price": 98328280,
+              "different": 2863930,
+              "is_different_up": true,
+              "created_at": "2026-06-16T01:25:35+03:00"
+            },
+            {
+              "old_price": 91792644,
+              "new_price": 95464350,
+              "different": 3671706,
+              "is_different_up": true,
+              "created_at": "2026-05-05T01:21:18+03:00"
+            },
+            {
+              "old_price": 90883806,
+              "new_price": 91792644,
+              "different": 908838,
+              "is_different_up": true,
+              "created_at": "2026-03-03T01:20:10+03:00"
+            },
+            {
+              "old_price": 88236705,
+              "new_price": 90883806,
+              "different": 2647101,
+              "is_different_up": true,
+              "created_at": "2026-02-17T01:15:02+03:00"
+            },
+            {
+              "old_price": 78782772,
+              "new_price": 88236705,
+              "different": 9453933,
+              "is_different_up": true,
+              "created_at": "2026-02-03T01:14:52+03:00"
+            },
+            {
+              "old_price": 78002745,
+              "new_price": 78782772,
+              "different": 780027,
+              "is_different_up": true,
+              "created_at": "2025-12-31T01:14:57+03:00"
+            },
+            {
+              "old_price": 75339421,
+              "new_price": 78002745,
+              "different": 2663324,
+              "is_different_up": true,
+              "created_at": "2025-12-18T04:28:23+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 75339421,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-05-16T00:23:58+03:00"
+            }
+          ],
+          "price_per_squad": 907043,
+          "mortgage": {
+            "min_payment_per_mounth": 1175064.36,
+            "min_first_deposit": 20271675.9726
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/748e7b9f393800bf1316654760edf9d2.jpg",
+          "house_name": "BALANCE",
+          "floor": 3,
+          "total_floor": 11,
+          "delivered_date": 2027,
+          "renovation": null
+        },
+        {
+          "id": 170804,
+          "rooms": 3,
+          "square": "99.21",
+          "price": 94222013,
+          "price_history": [
+            {
+              "old_price": 93289122,
+              "new_price": 94222013,
+              "different": 932891,
+              "is_different_up": true,
+              "created_at": "2026-11-04T01:27:22+03:00"
+            },
+            {
+              "old_price": 92365467,
+              "new_price": 93289122,
+              "different": 923655,
+              "is_different_up": true,
+              "created_at": "2026-09-29T01:18:54+03:00"
+            },
+            {
+              "old_price": 91450957,
+              "new_price": 92365467,
+              "different": 914510,
+              "is_different_up": true,
+              "created_at": "2026-08-04T01:21:12+03:00"
+            },
+            {
+              "old_price": 88787337,
+              "new_price": 91450957,
+              "different": 2663620,
+              "is_different_up": true,
+              "created_at": "2026-06-16T01:25:35+03:00"
+            },
+            {
+              "old_price": 85372486,
+              "new_price": 88787337,
+              "different": 3414851,
+              "is_different_up": true,
+              "created_at": "2026-05-05T01:21:18+03:00"
+            },
+            {
+              "old_price": 85372440,
+              "new_price": 85372486,
+              "different": 46,
+              "is_different_up": true,
+              "created_at": "2026-04-29T01:23:57+03:00"
+            },
+            {
+              "old_price": 85372486,
+              "new_price": 85372440,
+              "different": 46,
+              "is_different_up": false,
+              "created_at": "2026-04-16T01:23:11+03:00"
+            },
+            {
+              "old_price": 85372440,
+              "new_price": 85372486,
+              "different": 46,
+              "is_different_up": true,
+              "created_at": "2026-03-06T01:37:47+03:00"
+            },
+            {
+              "old_price": 84527168,
+              "new_price": 85372440,
+              "different": 845272,
+              "is_different_up": true,
+              "created_at": "2026-03-03T01:20:10+03:00"
+            },
+            {
+              "old_price": 82065212,
+              "new_price": 84527168,
+              "different": 2461956,
+              "is_different_up": true,
+              "created_at": "2026-02-17T01:15:02+03:00"
+            },
+            {
+              "old_price": 81252685,
+              "new_price": 82065212,
+              "different": 812527,
+              "is_different_up": true,
+              "created_at": "2025-12-31T01:14:57+03:00"
+            },
+            {
+              "old_price": 78478395,
+              "new_price": 81252685,
+              "different": 2774290,
+              "is_different_up": true,
+              "created_at": "2025-12-18T04:28:23+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 78478395,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-05-16T00:23:58+03:00"
+            }
+          ],
+          "price_per_squad": 949722,
+          "mortgage": {
+            "min_payment_per_mounth": 1092877.45,
+            "min_first_deposit": 18853824.8013
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/5a349403741f0cb2c3236e0dbe8c49ef.jpg",
+          "house_name": "BALANCE",
+          "floor": 5,
+          "total_floor": 11,
+          "delivered_date": 2027,
+          "renovation": null
+        }
+      ],
+      "limitation": "Дата последнего изменения цены, не подтверждение доступности сегодня; дата 11.11 без года в шапке не используется."
+    },
+    {
+      "complex_slug": "spb-neva-haus",
+      "source_url": "https://spb.kvadroom.ru/complex/spb-neva-haus",
+      "selected_source_rows": [
+        {
+          "complex_slug": "spb-neva-haus",
+          "external_id": "kvadroom:141561",
+          "rooms": 4,
+          "area_m2": "154.80",
+          "starting_price_rub": "81440280",
+          "updated_at": "2026-09-02T01:18:41+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/141561",
+          "building": "1",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-neva-haus",
+          "external_id": "kvadroom:141562",
+          "rooms": 4,
+          "area_m2": "154.60",
+          "starting_price_rub": "85200060",
+          "updated_at": "2026-04-04T01:22:31+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/141562",
+          "building": "1",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-neva-haus",
+          "external_id": "kvadroom:141563",
+          "rooms": 3,
+          "area_m2": "118.70",
+          "starting_price_rub": "66044680",
+          "updated_at": "2026-09-02T01:18:41+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/141563",
+          "building": "1",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-neva-haus",
+          "external_id": "kvadroom:141565",
+          "rooms": 4,
+          "area_m2": "188.50",
+          "starting_price_rub": "128104600",
+          "updated_at": "2026-09-02T01:18:41+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/141565",
+          "building": "1",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-neva-haus",
+          "external_id": "kvadroom:141566",
+          "rooms": 3,
+          "area_m2": "112.20",
+          "starting_price_rub": "80223000",
+          "updated_at": "2026-09-02T01:18:41+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/141566",
+          "building": "1",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "source_sample": [
+        {
+          "id": 141561,
+          "rooms": 4,
+          "square": "154.80",
+          "price": 81440280,
+          "price_history": [
+            {
+              "old_price": 80666280,
+              "new_price": 81440280,
+              "different": 774000,
+              "is_different_up": true,
+              "created_at": "2026-09-02T01:18:41+03:00"
+            },
+            {
+              "old_price": 77554800,
+              "new_price": 80666280,
+              "different": 3111480,
+              "is_different_up": true,
+              "created_at": "2026-04-04T01:22:31+03:00"
+            },
+            {
+              "old_price": 74536200,
+              "new_price": 77554800,
+              "different": 3018600,
+              "is_different_up": true,
+              "created_at": "2025-12-18T04:19:28+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 74536200,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-05-16T00:24:35+03:00"
+            }
+          ],
+          "price_per_squad": 526100,
+          "mortgage": {
+            "min_payment_per_mounth": 1023987.18,
+            "min_first_deposit": 16288056
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/682743b48c798.jpg",
+          "house_name": "1",
+          "floor": 6,
+          "total_floor": 9,
+          "delivered_date": 2021,
+          "renovation": "без отделки"
+        },
+        {
+          "id": 141562,
+          "rooms": 4,
+          "square": "154.60",
+          "price": 85200060,
+          "price_history": [
+            {
+              "old_price": 81922540,
+              "new_price": 85200060,
+              "different": 3277520,
+              "is_different_up": true,
+              "created_at": "2026-04-04T01:22:31+03:00"
+            },
+            {
+              "old_price": 78784160,
+              "new_price": 81922540,
+              "different": 3138380,
+              "is_different_up": true,
+              "created_at": "2025-12-18T04:19:28+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 78784160,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-05-16T00:24:35+03:00"
+            }
+          ],
+          "price_per_squad": 551100,
+          "mortgage": {
+            "min_payment_per_mounth": 754114.95,
+            "min_first_deposit": 25560018
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/682743b4a4e89.jpg",
+          "house_name": "1",
+          "floor": 7,
+          "total_floor": 9,
+          "delivered_date": 2021,
+          "renovation": "без отделки"
+        },
+        {
+          "id": 141563,
+          "rooms": 3,
+          "square": "118.70",
+          "price": 66044680,
+          "price_history": [
+            {
+              "old_price": 64145480,
+              "new_price": 66044680,
+              "different": 1899200,
+              "is_different_up": true,
+              "created_at": "2026-09-02T01:18:41+03:00"
+            },
+            {
+              "old_price": 62958480,
+              "new_price": 64145480,
+              "different": 1187000,
+              "is_different_up": true,
+              "created_at": "2026-05-02T01:21:42+03:00"
+            },
+            {
+              "old_price": 60537000,
+              "new_price": 62958480,
+              "different": 2421480,
+              "is_different_up": true,
+              "created_at": "2026-04-04T01:22:31+03:00"
+            },
+            {
+              "old_price": 59706100,
+              "new_price": 60537000,
+              "different": 830900,
+              "is_different_up": true,
+              "created_at": "2026-03-02T01:14:46+03:00"
+            },
+            {
+              "old_price": 57379580,
+              "new_price": 59706100,
+              "different": 2326520,
+              "is_different_up": true,
+              "created_at": "2025-12-18T04:19:28+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 57379580,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-05-16T00:24:35+03:00"
+            }
+          ],
+          "price_per_squad": 556400,
+          "mortgage": {
+            "min_payment_per_mounth": 830411.01,
+            "min_first_deposit": 13208936
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/682743b4bbded.jpg",
+          "house_name": "1",
+          "floor": 8,
+          "total_floor": 9,
+          "delivered_date": 2021,
+          "renovation": "без отделки"
+        },
+        {
+          "id": 141565,
+          "rooms": 4,
+          "square": "188.50",
+          "price": 128104600,
+          "price_history": [
+            {
+              "old_price": 126785100,
+              "new_price": 128104600,
+              "different": 1319500,
+              "is_different_up": true,
+              "created_at": "2026-09-02T01:18:41+03:00"
+            },
+            {
+              "old_price": 121902950,
+              "new_price": 126785100,
+              "different": 4882150,
+              "is_different_up": true,
+              "created_at": "2026-04-04T01:22:31+03:00"
+            },
+            {
+              "old_price": 118340300,
+              "new_price": 121902950,
+              "different": 3562650,
+              "is_different_up": true,
+              "created_at": "2025-12-18T04:19:28+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 118340300,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-05-16T00:24:35+03:00"
+            }
+          ],
+          "price_per_squad": 679600,
+          "mortgage": {
+            "min_payment_per_mounth": 1610719.75,
+            "min_first_deposit": 25620920
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/682743b50750c.jpg",
+          "house_name": "1",
+          "floor": 9,
+          "total_floor": 9,
+          "delivered_date": 2021,
+          "renovation": "без отделки"
+        },
+        {
+          "id": 141566,
+          "rooms": 3,
+          "square": "112.20",
+          "price": 80223000,
+          "price_history": [
+            {
+              "old_price": 77866800,
+              "new_price": 80223000,
+              "different": 2356200,
+              "is_different_up": true,
+              "created_at": "2026-09-02T01:18:41+03:00"
+            },
+            {
+              "old_price": 76183800,
+              "new_price": 77866800,
+              "different": 1683000,
+              "is_different_up": true,
+              "created_at": "2026-05-02T01:21:42+03:00"
+            },
+            {
+              "old_price": 73244160,
+              "new_price": 76183800,
+              "different": 2939640,
+              "is_different_up": true,
+              "created_at": "2026-04-04T01:22:31+03:00"
+            },
+            {
+              "old_price": 69979140,
+              "new_price": 73244160,
+              "different": 3265020,
+              "is_different_up": true,
+              "created_at": "2025-12-18T04:19:28+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 69979140,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-05-16T00:24:35+03:00"
+            }
+          ],
+          "price_per_squad": 715000,
+          "mortgage": {
+            "min_payment_per_mounth": 1008681.74,
+            "min_first_deposit": 16044600
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/682743b5200b2.jpg",
+          "house_name": "1",
+          "floor": 9,
+          "total_floor": 9,
+          "delivered_date": 2021,
+          "renovation": "без отделки"
+        }
+      ],
+      "limitation": "Дата последнего изменения цены, не подтверждение доступности сегодня; дата 11.11 без года в шапке не используется."
+    },
+    {
+      "complex_slug": "spb-petrovskaya-dominanta",
+      "source_url": "https://spb.kvadroom.ru/complex/spb-petrovskaya-dominanta",
+      "selected_source_rows": [],
+      "source_sample": [],
+      "limitation": "Дата последнего изменения цены, не подтверждение доступности сегодня; дата 11.11 без года в шапке не используется."
+    },
+    {
+      "complex_slug": "spb-defans-premium",
+      "source_url": "https://spb.kvadroom.ru/complex/spb-defans-premium",
+      "selected_source_rows": [
+        {
+          "complex_slug": "spb-defans-premium",
+          "external_id": "kvadroom:516180",
+          "rooms": 2,
+          "area_m2": "75.00",
+          "starting_price_rub": "27000000",
+          "updated_at": "2026-08-06T01:23:05+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/516180",
+          "building": "Премиум",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-defans-premium",
+          "external_id": "kvadroom:516186",
+          "rooms": 2,
+          "area_m2": "99.90",
+          "starting_price_rub": "33466500",
+          "updated_at": "2026-03-08T01:22:46+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/516186",
+          "building": "Премиум",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-defans-premium",
+          "external_id": "kvadroom:516187",
+          "rooms": 3,
+          "area_m2": "103.70",
+          "starting_price_rub": "32147000",
+          "updated_at": "2026-08-06T01:23:05+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/516187",
+          "building": "Премиум",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-defans-premium",
+          "external_id": "kvadroom:516189",
+          "rooms": 2,
+          "area_m2": "97.50",
+          "starting_price_rub": "32662500",
+          "updated_at": "2026-03-08T01:22:46+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/516189",
+          "building": "Премиум",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-defans-premium",
+          "external_id": "kvadroom:516190",
+          "rooms": 3,
+          "area_m2": "105.00",
+          "starting_price_rub": "32550000",
+          "updated_at": "2026-08-06T01:23:05+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/516190",
+          "building": "Премиум",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "source_sample": [
+        {
+          "id": 516180,
+          "rooms": 2,
+          "square": "75.00",
+          "price": 27000000,
+          "price_history": [
+            {
+              "old_price": 27750000,
+              "new_price": 27000000,
+              "different": 750000,
+              "is_different_up": false,
+              "created_at": "2026-08-06T01:23:05+03:00"
+            },
+            {
+              "old_price": 26325000,
+              "new_price": 27750000,
+              "different": 1425000,
+              "is_different_up": true,
+              "created_at": "2026-03-08T01:22:46+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 26325000,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-12-19T00:23:09+03:00"
+            }
+          ],
+          "price_per_squad": 360000,
+          "mortgage": {
+            "min_payment_per_mounth": 129486.73,
+            "min_first_deposit": 5402700
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/69448174d36f4.jpg",
+          "house_name": "Премиум",
+          "floor": 20,
+          "total_floor": 23,
+          "delivered_date": 2026,
+          "renovation": "без отделки"
+        },
+        {
+          "id": 516186,
+          "rooms": 2,
+          "square": "99.90",
+          "price": 33466500,
+          "price_history": [
+            {
+              "old_price": 30969000,
+              "new_price": 33466500,
+              "different": 2497500,
+              "is_different_up": true,
+              "created_at": "2026-03-08T01:22:46+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 30969000,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-12-19T00:23:09+03:00"
+            }
+          ],
+          "price_per_squad": 335000,
+          "mortgage": {
+            "min_payment_per_mounth": 160498.8,
+            "min_first_deposit": 6696646.65
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/694481756e2a1.jpg",
+          "house_name": "Премиум",
+          "floor": 18,
+          "total_floor": 23,
+          "delivered_date": 2026,
+          "renovation": "без отделки"
+        },
+        {
+          "id": 516187,
+          "rooms": 3,
+          "square": "103.70",
+          "price": 32147000,
+          "price_history": [
+            {
+              "old_price": 30073000,
+              "new_price": 32147000,
+              "different": 2074000,
+              "is_different_up": true,
+              "created_at": "2026-08-06T01:23:05+03:00"
+            },
+            {
+              "old_price": 29036000,
+              "new_price": 30073000,
+              "different": 1037000,
+              "is_different_up": true,
+              "created_at": "2026-03-08T01:22:46+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 29036000,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-12-19T00:23:09+03:00"
+            }
+          ],
+          "price_per_squad": 310000,
+          "mortgage": {
+            "min_payment_per_mounth": 154170.73,
+            "min_first_deposit": 6432614.7
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/6944817589a58.jpg",
+          "house_name": "Премиум",
+          "floor": 17,
+          "total_floor": 23,
+          "delivered_date": 2026,
+          "renovation": "без отделки"
+        },
+        {
+          "id": 516189,
+          "rooms": 2,
+          "square": "97.50",
+          "price": 32662500,
+          "price_history": [
+            {
+              "old_price": 30225000,
+              "new_price": 32662500,
+              "different": 2437500,
+              "is_different_up": true,
+              "created_at": "2026-03-08T01:22:46+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 30225000,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-12-19T00:23:09+03:00"
+            }
+          ],
+          "price_per_squad": 335000,
+          "mortgage": {
+            "min_payment_per_mounth": 156642.97,
+            "min_first_deposit": 6535766.25
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/69448175b541f.jpg",
+          "house_name": "Премиум",
+          "floor": 18,
+          "total_floor": 23,
+          "delivered_date": 2026,
+          "renovation": "без отделки"
+        },
+        {
+          "id": 516190,
+          "rooms": 3,
+          "square": "105.00",
+          "price": 32550000,
+          "price_history": [
+            {
+              "old_price": 31500000,
+              "new_price": 32550000,
+              "different": 1050000,
+              "is_different_up": true,
+              "created_at": "2026-08-06T01:23:05+03:00"
+            },
+            {
+              "old_price": 29400000,
+              "new_price": 31500000,
+              "different": 2100000,
+              "is_different_up": true,
+              "created_at": "2026-03-08T01:22:46+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 29400000,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2025-12-19T00:23:09+03:00"
+            }
+          ],
+          "price_per_squad": 310000,
+          "mortgage": {
+            "min_payment_per_mounth": 156103.44,
+            "min_first_deposit": 6513255
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/69448175c7e4d.jpg",
+          "house_name": "Премиум",
+          "floor": 18,
+          "total_floor": 23,
+          "delivered_date": 2026,
+          "renovation": "без отделки"
+        }
+      ],
+      "limitation": "Дата последнего изменения цены, не подтверждение доступности сегодня; дата 11.11 без года в шапке не используется."
+    },
+    {
+      "complex_slug": "spb-akvilon-lives",
+      "source_url": "https://spb.kvadroom.ru/complex/spb-akvilon-lives",
+      "selected_source_rows": [
+        {
+          "complex_slug": "spb-akvilon-lives",
+          "external_id": "kvadroom:800861",
+          "rooms": 0,
+          "area_m2": "26.30",
+          "starting_price_rub": "9696216",
+          "updated_at": "2026-10-31T01:27:25+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/800861",
+          "building": "1 оч. 2",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-akvilon-lives",
+          "external_id": "kvadroom:800862",
+          "rooms": 3,
+          "area_m2": "79.60",
+          "starting_price_rub": "25310253",
+          "updated_at": "2026-07-31T01:22:17+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/800862",
+          "building": "1 оч. 2",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-akvilon-lives",
+          "external_id": "kvadroom:800863",
+          "rooms": 3,
+          "area_m2": "91.50",
+          "starting_price_rub": "27988431",
+          "updated_at": "2026-07-31T01:22:17+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/800863",
+          "building": "1 оч. 2",
+          "is_active": true,
+          "is_demo": false
+        },
+        {
+          "complex_slug": "spb-akvilon-lives",
+          "external_id": "kvadroom:800865",
+          "rooms": 3,
+          "area_m2": "93.60",
+          "starting_price_rub": "30402871",
+          "updated_at": "2026-07-31T01:22:17+03:00",
+          "source_url": "https://spb.kvadroom.ru/offer/800865",
+          "building": "1 оч. 2",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "source_sample": [
+        {
+          "id": 800860,
+          "rooms": 1,
+          "square": "39.10",
+          "price": 14616596,
+          "price_history": null,
+          "price_per_squad": 373825,
+          "mortgage": {
+            "min_payment_per_mounth": 37563.19,
+            "min_first_deposit": 2937935.796
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/3d53cb6b0dde64067e59560c8a5f3ea3.jpg",
+          "house_name": "1 оч. 2",
+          "floor": 8,
+          "total_floor": 12,
+          "delivered_date": 2026,
+          "renovation": "предчистовая"
+        },
+        {
+          "id": 800861,
+          "rooms": 0,
+          "square": "26.30",
+          "price": 9696216,
+          "price_history": [
+            {
+              "old_price": 10315123,
+              "new_price": 9696216,
+              "different": 618907,
+              "is_different_up": false,
+              "created_at": "2026-10-31T01:27:25+03:00"
+            },
+            {
+              "old_price": 11862391,
+              "new_price": 10315123,
+              "different": 1547268,
+              "is_different_up": false,
+              "created_at": "2026-07-31T01:22:17+03:00"
+            },
+            {
+              "old_price": 10315123,
+              "new_price": 11862391,
+              "different": 1547268,
+              "is_different_up": true,
+              "created_at": "2026-07-14T01:20:46+03:00"
+            },
+            {
+              "old_price": 9730069,
+              "new_price": 10315123,
+              "different": 585054,
+              "is_different_up": true,
+              "created_at": "2026-07-08T01:24:30+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 9730069,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2026-04-10T01:23:42+03:00"
+            }
+          ],
+          "price_per_squad": 368677,
+          "mortgage": {
+            "min_payment_per_mounth": 24918.3,
+            "min_first_deposit": 1948939.416
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/c2c6d893a27b1861621cf0debf2f4546.jpg",
+          "house_name": "1 оч. 2",
+          "floor": 12,
+          "total_floor": 12,
+          "delivered_date": 2026,
+          "renovation": "предчистовая"
+        },
+        {
+          "id": 800862,
+          "rooms": 3,
+          "square": "79.60",
+          "price": 25310253,
+          "price_history": [
+            {
+              "old_price": 29106791,
+              "new_price": 25310253,
+              "different": 3796538,
+              "is_different_up": false,
+              "created_at": "2026-07-31T01:22:17+03:00"
+            },
+            {
+              "old_price": 25310253,
+              "new_price": 29106791,
+              "different": 3796538,
+              "is_different_up": true,
+              "created_at": "2026-07-14T01:20:46+03:00"
+            },
+            {
+              "old_price": 23112147,
+              "new_price": 25310253,
+              "different": 2198106,
+              "is_different_up": true,
+              "created_at": "2026-07-08T01:24:30+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 23112147,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2026-04-10T01:23:42+03:00"
+            }
+          ],
+          "price_per_squad": 317968,
+          "mortgage": {
+            "min_payment_per_mounth": 65044.81,
+            "min_first_deposit": 5087360.853
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/61c283f41dcc9c0256557d83ea2018e9.jpg",
+          "house_name": "1 оч. 2",
+          "floor": 3,
+          "total_floor": 12,
+          "delivered_date": 2026,
+          "renovation": "предчистовая"
+        },
+        {
+          "id": 800863,
+          "rooms": 3,
+          "square": "91.50",
+          "price": 27988431,
+          "price_history": [
+            {
+              "old_price": 32186696,
+              "new_price": 27988431,
+              "different": 4198265,
+              "is_different_up": false,
+              "created_at": "2026-07-31T01:22:17+03:00"
+            },
+            {
+              "old_price": 27988431,
+              "new_price": 32186696,
+              "different": 4198265,
+              "is_different_up": true,
+              "created_at": "2026-07-14T01:20:46+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 27988431,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2026-04-10T01:23:42+03:00"
+            }
+          ],
+          "price_per_squad": 305884,
+          "mortgage": {
+            "min_payment_per_mounth": 71927.46,
+            "min_first_deposit": 5625674.631
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/8992e6a405193372901077cdce31c946.jpg",
+          "house_name": "1 оч. 2",
+          "floor": 10,
+          "total_floor": 12,
+          "delivered_date": 2026,
+          "renovation": "предчистовая"
+        },
+        {
+          "id": 800865,
+          "rooms": 3,
+          "square": "93.60",
+          "price": 30402871,
+          "price_history": [
+            {
+              "old_price": 34963302,
+              "new_price": 30402871,
+              "different": 4560431,
+              "is_different_up": false,
+              "created_at": "2026-07-31T01:22:17+03:00"
+            },
+            {
+              "old_price": 30402871,
+              "new_price": 34963302,
+              "different": 4560431,
+              "is_different_up": true,
+              "created_at": "2026-07-14T01:20:46+03:00"
+            },
+            {
+              "old_price": 31071577,
+              "new_price": 30402871,
+              "different": 668706,
+              "is_different_up": false,
+              "created_at": "2026-07-08T01:24:30+03:00"
+            },
+            {
+              "old_price": null,
+              "new_price": 31071577,
+              "different": null,
+              "is_different_up": null,
+              "created_at": "2026-04-10T01:23:42+03:00"
+            }
+          ],
+          "price_per_squad": 324816,
+          "mortgage": {
+            "min_payment_per_mounth": 78132.33,
+            "min_first_deposit": 6110977.071
+          },
+          "svg_img": "https://static.kvadroom.ru/images/flat_plan/46ef35969c270cb56d63f7666ed6ec7f.jpg",
+          "house_name": "1 оч. 2",
+          "floor": 10,
+          "total_floor": 12,
+          "delivered_date": 2026,
+          "renovation": "предчистовая"
+        }
+      ],
+      "limitation": "Дата последнего изменения цены, не подтверждение доступности сегодня; дата 11.11 без года в шапке не используется."
+    },
+    {
+      "complex_slug": "moscow-ostrov",
+      "source_url": "https://www.mirkvartir.ru/373632343/",
+      "source_updated_at": "2026-11-09",
+      "selected_source_rows": [
+        {
+          "complex_slug": "moscow-ostrov",
+          "external_id": "mirkvartir:373632343",
+          "rooms": 1,
+          "area_m2": "41.1",
+          "starting_price_rub": "33000000",
+          "updated_at": "2026-11-09",
+          "source_url": "https://www.mirkvartir.ru/373632343/",
+          "building": "Нижние Мнёвники, 20",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "limitation": "Датированная карточка в поисковом индексе; прямой HTTP 403 / web cache miss. Доступность на дату загрузки не переподтверждена."
+    },
+    {
+      "complex_slug": "moscow-ostrov",
+      "source_url": "https://www.mirkvartir.ru/373470817/",
+      "source_updated_at": "2026-11-06",
+      "selected_source_rows": [
+        {
+          "complex_slug": "moscow-ostrov",
+          "external_id": "mirkvartir:373470817",
+          "rooms": 2,
+          "area_m2": "58",
+          "starting_price_rub": "38950000",
+          "updated_at": "2026-11-06",
+          "source_url": "https://www.mirkvartir.ru/373470817/",
+          "building": "Нижние Мнёвники, 12",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "limitation": "Датированная карточка в поисковом индексе; прямой HTTP 403 / web cache miss. Доступность на дату загрузки не переподтверждена."
+    },
+    {
+      "complex_slug": "moscow-ostrov",
+      "source_url": "https://www.mirkvartir.ru/373555215/",
+      "source_updated_at": "2026-11-08",
+      "selected_source_rows": [
+        {
+          "complex_slug": "moscow-ostrov",
+          "external_id": "mirkvartir:373555215",
+          "rooms": 4,
+          "area_m2": "109",
+          "starting_price_rub": "99500000",
+          "updated_at": "2026-11-08",
+          "source_url": "https://www.mirkvartir.ru/373555215/",
+          "building": "Нижние Мнёвники, 16к4",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "limitation": "Датированная карточка в поисковом индексе; прямой HTTP 403 / web cache miss. Доступность на дату загрузки не переподтверждена."
+    },
+    {
+      "complex_slug": "moscow-ostrov",
+      "source_url": "https://www.mirkvartir.ru/368413924/",
+      "source_updated_at": "2026-11-09",
+      "selected_source_rows": [
+        {
+          "complex_slug": "moscow-ostrov",
+          "external_id": "mirkvartir:368413924",
+          "rooms": 0,
+          "area_m2": "28.5",
+          "starting_price_rub": "21500000",
+          "updated_at": "2026-11-09",
+          "source_url": "https://www.mirkvartir.ru/368413924/",
+          "building": "Нижние Мнёвники, 20",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "limitation": "Датированная карточка в поисковом индексе; прямой HTTP 403 / web cache miss. Доступность на дату загрузки не переподтверждена."
+    },
+    {
+      "complex_slug": "moscow-ostrov",
+      "source_url": "https://www.mirkvartir.ru/372848143/",
+      "source_updated_at": "2026-10-31",
+      "selected_source_rows": [
+        {
+          "complex_slug": "moscow-ostrov",
+          "external_id": "mirkvartir:372848143",
+          "rooms": 1,
+          "area_m2": "46.5",
+          "starting_price_rub": "34950000",
+          "updated_at": "2026-10-31",
+          "source_url": "https://www.mirkvartir.ru/372848143/",
+          "building": "Нижние Мнёвники, 16к4",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "limitation": "Датированная карточка в поисковом индексе; прямой HTTP 403 / web cache miss. Доступность на дату загрузки не переподтверждена."
+    },
+    {
+      "complex_slug": "spb-petrovskaya-dominanta",
+      "source_url": "https://www.mirkvartir.ru/369861327/",
+      "source_updated_at": "2026-10-19",
+      "selected_source_rows": [
+        {
+          "complex_slug": "spb-petrovskaya-dominanta",
+          "external_id": "mirkvartir:369861327",
+          "rooms": 3,
+          "area_m2": "140",
+          "starting_price_rub": "129000000",
+          "updated_at": "2026-10-19",
+          "source_url": "https://www.mirkvartir.ru/369861327/",
+          "building": "Петровская коса, 6к1",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "limitation": "Датированная карточка в поисковом индексе; прямой HTTP 403 / web cache miss. Доступность на дату загрузки не переподтверждена."
+    },
+    {
+      "complex_slug": "spb-petrovskaya-dominanta",
+      "source_url": "https://www.mirkvartir.ru/368105803/",
+      "source_updated_at": "2026-11-04",
+      "selected_source_rows": [
+        {
+          "complex_slug": "spb-petrovskaya-dominanta",
+          "external_id": "mirkvartir:368105803",
+          "rooms": 3,
+          "area_m2": "84.8",
+          "starting_price_rub": "44500000",
+          "updated_at": "2026-11-04",
+          "source_url": "https://www.mirkvartir.ru/368105803/",
+          "building": "Петровская коса, 6к1",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "limitation": "Датированная карточка в поисковом индексе; прямой HTTP 403 / web cache miss. Доступность на дату загрузки не переподтверждена."
+    },
+    {
+      "complex_slug": "spb-petrovskaya-dominanta",
+      "source_url": "https://www.mirkvartir.ru/367729225/",
+      "source_updated_at": "2026-09-20",
+      "selected_source_rows": [
+        {
+          "complex_slug": "spb-petrovskaya-dominanta",
+          "external_id": "mirkvartir:367729225",
+          "rooms": 4,
+          "area_m2": "165",
+          "starting_price_rub": "115000000",
+          "updated_at": "2026-09-20",
+          "source_url": "https://www.mirkvartir.ru/367729225/",
+          "building": "Петровская коса, 6к1",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "limitation": "Датированная карточка в поисковом индексе; прямой HTTP 403 / web cache miss. Доступность на дату загрузки не переподтверждена."
+    },
+    {
+      "complex_slug": "sochi-otrazhenie",
+      "source_url": "https://www.mirkvartir.ru/372152057/",
+      "source_updated_at": "2026-10-17",
+      "selected_source_rows": [
+        {
+          "complex_slug": "sochi-otrazhenie",
+          "external_id": "mirkvartir:372152057",
+          "rooms": 0,
+          "area_m2": "34",
+          "starting_price_rub": "12886000",
+          "updated_at": "2026-10-17",
+          "source_url": "https://www.mirkvartir.ru/372152057/",
+          "building": "Дом 1",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "limitation": "Датированная карточка в поисковом индексе; прямой HTTP 403 / web cache miss. Доступность на дату загрузки не переподтверждена."
+    },
+    {
+      "complex_slug": "sochi-otrazhenie",
+      "source_url": "https://www.mirkvartir.ru/372481070/",
+      "source_updated_at": "2026-10-22",
+      "selected_source_rows": [
+        {
+          "complex_slug": "sochi-otrazhenie",
+          "external_id": "mirkvartir:372481070",
+          "rooms": 1,
+          "area_m2": "34",
+          "starting_price_rub": "12988000",
+          "updated_at": "2026-10-22",
+          "source_url": "https://www.mirkvartir.ru/372481070/",
+          "building": "Дом 1",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "limitation": "Датированная карточка в поисковом индексе; прямой HTTP 403 / web cache miss. Доступность на дату загрузки не переподтверждена."
+    },
+    {
+      "complex_slug": "sochi-otrazhenie",
+      "source_url": "https://www.mirkvartir.ru/372152055/",
+      "source_updated_at": "2026-10-17",
+      "selected_source_rows": [
+        {
+          "complex_slug": "sochi-otrazhenie",
+          "external_id": "mirkvartir:372152055",
+          "rooms": 0,
+          "area_m2": "31.35",
+          "starting_price_rub": "11787600",
+          "updated_at": "2026-10-17",
+          "source_url": "https://www.mirkvartir.ru/372152055/",
+          "building": "Дом 1",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "limitation": "Датированная карточка в поисковом индексе; прямой HTTP 403 / web cache miss. Доступность на дату загрузки не переподтверждена."
+    },
+    {
+      "complex_slug": "spb-defans-premium",
+      "source_url": "https://www.mirkvartir.ru/370899627/",
+      "source_updated_at": "2026-11-02",
+      "selected_source_rows": [
+        {
+          "complex_slug": "spb-defans-premium",
+          "external_id": "mirkvartir:370899627",
+          "rooms": 4,
+          "area_m2": "181.6",
+          "starting_price_rub": "57200000",
+          "updated_at": "2026-11-02",
+          "source_url": "https://www.mirkvartir.ru/370899627/",
+          "building": "Типанова, 22/47",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "limitation": "Датированная карточка в поисковом индексе; прямой HTTP 403 / web cache miss. Доступность на дату загрузки не переподтверждена."
+    },
+    {
+      "complex_slug": "sochi-olivia",
+      "source_url": "https://grc-sochi.ru/offers/kvartiry-v-sochi/novie-doma/1-komnatnaya-kvartira-416-m2-id-85854/",
+      "source_updated_at": "2026-11-10",
+      "selected_source_rows": [
+        {
+          "complex_slug": "sochi-olivia",
+          "external_id": "grc:85854",
+          "rooms": 1,
+          "area_m2": "41.6",
+          "starting_price_rub": "16000000",
+          "updated_at": "2026-11-10",
+          "source_url": "https://grc-sochi.ru/offers/kvartiry-v-sochi/novie-doma/1-komnatnaya-kvartira-416-m2-id-85854/",
+          "building": "Ленина, 290/8к6",
+          "is_active": true,
+          "is_demo": false
+        }
+      ],
+      "limitation": "Один собственник, без обременений; вторичная продажа, черновая отделка."
+    }
+  ]
+}

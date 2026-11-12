@@ -1,0 +1,28 @@
+name: residential-picker
+services:
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    user: "${APP_UID:-1000}:${APP_GID:-1000}"
+    environment:
+      DATABASE_URL: sqlite:////app/storage/residential-picker.sqlite3
+      PRICE_MAX_AGE_DAYS: "30"
+    volumes:
+      - ./data:/app/storage
+      - ./data:/data:ro
+    networks: [default]
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        BASE_PATH: /residential/
+    container_name: residential-picker-frontend
+    restart: unless-stopped
+    environment:
+      API_UPSTREAM: backend:8000
+    depends_on: [backend]
+    networks: [default, gateway]
+networks:
+  gateway:
+    name: gateway
+    external: true

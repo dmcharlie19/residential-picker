@@ -1,0 +1,234 @@
+{
+  "checked_on": "2026-11-11",
+  "reason": "Недостаточно обязательных полей, не импортировать",
+  "sources": [
+    {
+      "complex_slug": "sochi-olivia",
+      "source_url": "https://realty5.ru/api/complex/85/lots",
+      "source_updated_at": "2026-10-21T11:52:12.945Z",
+      "available_with_price": 173,
+      "complete": 0,
+      "sample": [
+        {
+          "id": 21326,
+          "building": "Дом 11 / Секция 1",
+          "number": "2к1",
+          "floor": 2,
+          "rooms": null,
+          "area": 25.3,
+          "price": 13788500,
+          "status": "free",
+          "planUrl": null,
+          "polygon": null,
+          "photos": "[]",
+          "floorPlanId": null,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": null
+        },
+        {
+          "id": 21126,
+          "building": "Дом 7 / Секция 1",
+          "number": "2к10",
+          "floor": 2,
+          "rooms": null,
+          "area": 44.6,
+          "price": 25422000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 1485 1455 L 1769 1455 L 1768 1363 L 1794 1363 L 1822 1377 L 1854 1401 L 1865 1419 L 1872 1433 L 1877 1455 L 2204 1455 L 2203 2262 L 1801 2262 L 1800 2383 L 1432 2381 L 1433 2221 L 1485 2220 L 1486 1455 Z",
+          "photos": "[]",
+          "floorPlanId": 642,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 642,
+            "imageUrl": "/complexes/objects/4915/plans/plan_13177.r5.svg?v=6",
+            "svgViewBox": "0 0 10119 2547"
+          }
+        },
+        {
+          "id": 21222,
+          "building": "Дом 3 / Секция 1",
+          "number": "2к10",
+          "floor": 2,
+          "rooms": null,
+          "area": 44.7,
+          "price": 25479000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 1484 1456 L 1766 1454 L 1767 1364 L 1786 1363 L 1814 1371 L 1853 1392 L 1866 1423 L 1875 1444 L 1881 1455 L 2204 1455 L 2204 2267 L 1803 2263 L 1801 2380 L 1433 2380 L 1433 2218 L 1485 2218 L 1486 1455 Z",
+          "photos": "[]",
+          "floorPlanId": 639,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 639,
+            "imageUrl": "/complexes/objects/4915/plans/plan_13174.r5.svg?v=6",
+            "svgViewBox": "0 0 10119 2547"
+          }
+        },
+        {
+          "id": 21127,
+          "building": "Дом 7 / Секция 1",
+          "number": "2к11",
+          "floor": 2,
+          "rooms": null,
+          "area": 54.3,
+          "price": 31765500,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 442 1680 L 1098 1681 L 1099 1455 L 1193 1453 L 1192 1363 L 1216 1364 L 1242 1373 L 1278 1398 L 1294 1417 L 1305 1454 L 1515 1455 L 1515 2260 L 1463 2259 L 1463 2381 L 1097 2384 L 1097 2260 L 441 2260 Z",
+          "photos": "[]",
+          "floorPlanId": 642,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 642,
+            "imageUrl": "/complexes/objects/4915/plans/plan_13177.r5.svg?v=6",
+            "svgViewBox": "0 0 10119 2547"
+          }
+        },
+        {
+          "id": 21191,
+          "building": "Дом 2 / Секция 1",
+          "number": "2к11",
+          "floor": 2,
+          "rooms": null,
+          "area": 54.3,
+          "price": 30951000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 442 1681 L 1099 1681 L 1099 1455 L 1195 1452 L 1191 1365 L 1217 1366 L 1243 1373 L 1277 1398 L 1292 1414 L 1300 1430 L 1305 1455 L 1515 1455 L 1517 2259 L 1463 2259 L 1463 2383 L 1094 2383 L 1095 2261 L 438 2264 Z",
+          "photos": "[]",
+          "floorPlanId": 638,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 638,
+            "imageUrl": "/complexes/objects/4915/plans/plan_13173.r5.svg?v=6",
+            "svgViewBox": "0 0 10119 2547"
+          }
+        }
+      ],
+      "selected_source_rows": [],
+      "limitation": "Нет комнатности"
+    },
+    {
+      "complex_slug": "sochi-otrazhenie",
+      "source_url": "https://realty5.ru/api/complex/130/lots",
+      "source_updated_at": "2026-10-21T11:55:12.567Z",
+      "available_with_price": 59,
+      "complete": 0,
+      "sample": [
+        {
+          "id": 48165,
+          "building": "БС 1-2 / Секция 1",
+          "number": "1",
+          "floor": 2,
+          "rooms": null,
+          "area": 106.95,
+          "price": 40213200,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 1548 3203 L 1659 3122 L 1668 3134 L 1772 3052 L 2064 2825 L 2037 2784 L 2199 2671 L 2104 2533 L 2206 2466 L 2208 2399 L 2215 2364 L 2230 2342 L 2245 2349 L 2295 2409 L 2311 2400 L 2151 2152 L 2171 2140 L 2837 1753 L 2868 1724 L 3010 1654 L 3226 1984 L 2946 2204 L 3214 2497 L 3218 2523 L 2005 3738 L 1739 3455 Z",
+          "photos": "[]",
+          "floorPlanId": 1038,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 1038,
+            "imageUrl": "/complexes/objects/2308/plans/plan_13532.png",
+            "svgViewBox": "0 0 3458 3932"
+          }
+        },
+        {
+          "id": 48170,
+          "building": "БС 1-2 / Секция 1",
+          "number": "6",
+          "floor": 2,
+          "rooms": null,
+          "area": 78.56,
+          "price": 29538560,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 562 266 L 2649 268 L 2670 673 L 2477 691 L 1946 764 L 1715 787 L 1624 806 L 1601 851 L 1582 872 L 1556 890 L 1540 893 L 1506 816 L 1251 854 L 855 903 L 750 917 L 754 929 L 601 950 L 577 634 L 558 261 Z",
+          "photos": "[]",
+          "floorPlanId": 1038,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 1038,
+            "imageUrl": "/complexes/objects/2308/plans/plan_13532.png",
+            "svgViewBox": "0 0 3458 3932"
+          }
+        },
+        {
+          "id": 48202,
+          "building": "БС 1-2 / Секция 1",
+          "number": "13",
+          "floor": 3,
+          "rooms": null,
+          "area": 79.66,
+          "price": 30111480,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 562 266 L 2649 268 L 2670 673 L 2477 691 L 1946 764 L 1715 787 L 1624 806 L 1601 851 L 1582 872 L 1556 890 L 1540 893 L 1506 816 L 1251 854 L 855 903 L 750 917 L 754 929 L 601 950 L 577 634 L 558 261 Z",
+          "photos": "[]",
+          "floorPlanId": 1038,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 1038,
+            "imageUrl": "/complexes/objects/2308/plans/plan_13532.png",
+            "svgViewBox": "0 0 3458 3932"
+          }
+        },
+        {
+          "id": 48205,
+          "building": "БС 1-2 / Секция 2",
+          "number": "67",
+          "floor": 3,
+          "rooms": null,
+          "area": 34,
+          "price": 12784000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 1580 4779 L 1615 4780 L 1631 4648 L 1671 4649 L 1717 4682 L 1777 4788 L 1810 4436 L 1853 4445 L 2197 4481 L 2968 4575 L 3055 4581 L 3250 4603 L 3209 5198 L 1564 5198 L 1580 4781 Z",
+          "photos": "[]",
+          "floorPlanId": 1039,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 1039,
+            "imageUrl": "/complexes/objects/2308/plans/plan_13533.r5.svg?v=6",
+            "svgViewBox": "0 0 4385 5323"
+          }
+        },
+        {
+          "id": 48211,
+          "building": "БС 1-2 / Секция 2",
+          "number": "73",
+          "floor": 3,
+          "rooms": null,
+          "area": 70.52,
+          "price": 24682000,
+          "status": "free",
+          "planUrl": null,
+          "polygon": "M 1602 895 L 1885 544 L 2242 151 L 4029 1917 L 3624 2365 L 3590 2405 L 2860 1845 L 2794 1795 L 2724 1900 L 2704 1887 L 2678 1866 L 2667 1825 L 2667 1776 L 2667 1728 L 2673 1712 L 2348 1466 L 1763 1014 L 1607 885 Z",
+          "photos": "[]",
+          "floorPlanId": 1039,
+          "saleKind": null,
+          "saleNote": null,
+          "floorPlan": {
+            "id": 1039,
+            "imageUrl": "/complexes/objects/2308/plans/plan_13533.r5.svg?v=6",
+            "svgViewBox": "0 0 4385 5323"
+          }
+        }
+      ],
+      "selected_source_rows": [],
+      "limitation": "Нет комнатности"
+    }
+  ]
+}

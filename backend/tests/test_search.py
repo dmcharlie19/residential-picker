@@ -15,12 +15,11 @@ from app.schemas.search import SearchQuery, SearchValidationError
 from app.services.search import search
 
 NOW = datetime(2026, 11, 11, 12)
-CONFIG = SimpleNamespace(demo_mode=False, area_tolerance_ratio=Decimal(".10"), price_max_age_days=30)
+CONFIG = SimpleNamespace(demo_mode=False, price_max_age_days=30)
 
 
-def query(budget="20000000", area="50", city="Сочи"):
-    return SearchQuery(city=city, budget_rub=Decimal(budget), desired_area_m2=Decimal(area))
-
+def query(budget="20000000", rooms=(0,1,2,3,4), city="Сочи"):
+    return SearchQuery(city=city, budget_rub=Decimal(budget), rooms=list(rooms))
 
 def complex_row(s, slug="one", **kw):
     values = dict(slug=slug, city="Сочи", name=slug, developer="Застройщик", district="Район",
@@ -46,27 +45,6 @@ def lot_row(s, c, external_id="one", **kw):
     return row
 
 
-@pytest.mark.parametrize("field,value", [
-    ("budget","0"),("budget","-1"),("budget","NaN"),("budget","Infinity"),
-    ("budget","1e7"),("budget","1.001"),("budget","100000000000000"),
-    ("area","0"),("area","-1"),("area","1000000"),("area","50.001"),
-    ("city",""),("city"," " * 4),("city","a"*101),
-])
-def test_query_rejects_invalid_numbers_and_city(field,value):
-    pairs = dict(city="Сочи",budget="20000000",area="50")
-    pairs[field]=value
-    with pytest.raises(SearchValidationError):
-        SearchQuery.from_params(list(pairs.items()))
-
-
-def test_query_aliases_precision_duplicates_and_unknown():
-    q = SearchQuery.from_params([("city"," спб "),("budget","99999999999999.99"),("area","50.25")])
-    assert q.city == "Санкт-Петербург" and q.budget_rub == Decimal("99999999999999.99")
-    for extra in ([("area","51")], [("limit","3")]):
-        with pytest.raises(SearchValidationError):
-            SearchQuery.from_params([("city","Сочи"),("budget","10"),("area","50")]+extra)
-
-
 @pytest.mark.parametrize("demo,url", [
     (True,"sqlite:///catalog.sqlite3"),
     (False,"sqlite:///catalog-demo.sqlite3"),
@@ -74,25 +52,6 @@ def test_query_aliases_precision_duplicates_and_unknown():
 def test_database_modes_cannot_mix(demo,url):
     with pytest.raises(ValueError):
         Settings(database_url=url,demo_mode=demo)
-
-
-def test_budget_area_boundaries_and_best_per_complex(db_session):
-    c = complex_row(db_session)
-    lot_row(db_session,c,"over-budget",starting_price_rub=Decimal("20000000.01"))
-    lot_row(db_session,c,"too-small",area_m2=Decimal("49.99"))
-    lot_row(db_session,c,"too-big",area_m2=Decimal("55.01"))
-    best = lot_row(db_session,c,"exact",starting_price_rub=Decimal("20000000"))
-    lot_row(db_session,c,"upper",area_m2=Decimal("55"),starting_price_rub=Decimal("1"))
-    found = search(db_session,query(),now=NOW,config=CONFIG)
-    assert found.count == 1 and found.results[0].lot.id == best.id
-    assert found.results[0].estimated_price_rub == "20000000.00"
-    assert "INSUFFICIENT_MATCHES" in found.warnings
-
-
-def test_upper_area_boundary_is_inclusive(db_session):
-    c=complex_row(db_session)
-    lot_row(db_session,c,area_m2=Decimal("55"))
-    assert search(db_session,query(),now=NOW,config=CONFIG).count==1
 
 
 def test_freshness_boundary_inactive_future_and_demo(db_session):
@@ -110,7 +69,7 @@ def test_freshness_boundary_inactive_future_and_demo(db_session):
     assert [r.complex.id for r in response.results]==ids[:1]
 
 
-def test_stable_ranking_three_distinct_complexes(db_session):
+def test_all_matching_complexes_returned_in_stable_order(db_session):
     complexes=[complex_row(db_session,str(i)) for i in range(5)]
     for c in reversed(complexes):
         lot_row(db_session,c,"b",area_m2=Decimal("51"))
@@ -118,44 +77,7 @@ def test_stable_ranking_three_distinct_complexes(db_session):
     first=search(db_session,query(),now=NOW,config=CONFIG)
     second=search(db_session,query(),now=NOW,config=CONFIG)
     assert first.model_dump()==second.model_dump()
-    assert [r.complex.id for r in first.results]==[c.id for c in complexes[:3]]
-
-
-def test_closest_then_newest_then_cheapest(db_session):
-    a=complex_row(db_session,"a")
-    b=complex_row(db_session,"b")
-    c=complex_row(db_session,"c")
-    lot_row(db_session,a,area_m2=Decimal("51"),starting_price_rub=Decimal("1"))
-    lot_row(db_session,b,updated_at=NOW-timedelta(days=1),starting_price_rub=Decimal("1"))
-    lot_row(db_session,c,starting_price_rub=Decimal("19000000"))
-    r=search(db_session,query(),now=NOW,config=CONFIG)
-    assert [m.complex.name for m in r.results]==["c","b","a"]
-
-
-def test_estimates_rounding_and_no_substitution_for_historical_lots(db_session):
-    fresh=NOW.date()
-    c=complex_row(db_session,"estimate",min_price_m2=Decimal("100000.01"),price_observed_on=fresh)
-    historic=complex_row(db_session,"historic",min_price_m2=Decimal("1"),price_observed_on=fresh)
-    lot_row(db_session,historic,is_active=False)
-    complex_row(db_session,"unknown-date",min_price_m2=Decimal("1"))
-    complex_row(db_session,"old",min_price_m2=Decimal("1"),price_observed_on=fresh-timedelta(days=31))
-    complex_row(db_session,"future",min_price_m2=Decimal("1"),price_observed_on=fresh+timedelta(days=1))
-    r=search(db_session,query(area="50.25",budget="5025000.49"),now=NOW,config=CONFIG)
-    assert r.count==0
-    r=search(db_session,query(area="50.25",budget="5025000.51"),now=NOW,config=CONFIG)
-    assert r.count==1 and r.results[0].match_type=="estimate"
-    assert r.results[0].lot is None and r.results[0].estimated_price_rub=="5025000.50"
-    # 100000.01 * 50.25 = 5025000.5025 rounds to .50; exact budget also qualifies.
-    assert search(db_session,query(area="50.25",budget="5025000.50"),now=NOW,config=CONFIG).count==1
-
-
-def test_real_lots_before_cheaper_estimates_and_unknown_city(db_session):
-    e=complex_row(db_session,"estimate",min_price_m2=Decimal("1"),price_observed_on=NOW.date())
-    c=complex_row(db_session,"lot")
-    lot_row(db_session,c)
-    r=search(db_session,query(),now=NOW,config=CONFIG)
-    assert [m.match_type for m in r.results]==["lot","estimate"]
-    assert search(db_session,query(city="Казань"),now=NOW,config=CONFIG).results==[]
+    assert [r.complex.id for r in first.results]==[c.id for c in complexes]
 
 
 def test_demo_mode_only_returns_demo_lots(db_session):
@@ -199,9 +121,9 @@ def test_window_query_uses_bounded_selects_on_ten_thousand_lots(db_session,datab
         r=search(db_session,query(),now=NOW,config=CONFIG)
     finally:
         event.remove(database_engine,"before_cursor_execute",capture)
-    assert r.count==3 and len(statements)<=3
-    stmt=lots_statement(city="Сочи",budget=Decimal("20000000"),area=Decimal("50"),
-                        now=NOW,tolerance=Decimal(".10"),max_age=30,demo_mode=False)
+    assert r.count==100 and len(statements)<=3
+    stmt=lots_statement(city="Сочи",budget=Decimal("20000000"),rooms=[0,1,2,3,4],
+                        now=NOW,max_age=30,demo_mode=False)
     compiled=stmt.compile(database_engine,compile_kwargs={"literal_binds":True})
     plan=db_session.execute(text("EXPLAIN QUERY PLAN "+str(compiled))).mappings().all()
     assert any("INDEX" in row["detail"] for row in plan)
@@ -217,41 +139,12 @@ def client(db_session):
     app.dependency_overrides.clear()
 
 
-def test_api_response_empty_validation_and_single_route(client):
-    response=client.get("/api/v1/search",params=dict(city=" СПб ",budget="20000000",area="50"))
-    assert response.status_code==200
-    data=response.json()
-    assert data["query"]["city"]=="Санкт-Петербург"
-    assert data["results"]==[] and data["count"]==0
-    assert data["query"]["budget_rub"]=="20000000.00"
-    bad=client.get("/api/v1/search?city=Сочи&budget=10&area=50&area=51")
-    assert bad.status_code==422 and "area" in bad.json()["error"]["fields"]
-    assert client.get("/api/v1/search?city=Сочи&budget=10&area=50&limit=3").status_code==422
-    from app.api.search import router
-    assert len(app.routes)==1
-    assert [r.path for r in router.routes]==["/api/v1/search"]
-    assert client.get("/docs").status_code==404
-
-
-def test_api_lot_and_estimate_contract(client,db_session):
-    now=datetime.now(timezone.utc).replace(tzinfo=None)
-    c=complex_row(db_session)
-    lot_row(db_session,c,updated_at=now,starting_price_rub=Decimal("15000000.01"))
-    complex_row(db_session,"estimate",min_price_m2=Decimal("100000"),price_observed_on=now.date())
-    response=client.get("/api/v1/search",params=dict(city="Сочи",budget="20000000",area="50"))
-    assert response.status_code==200
-    r=response.json()
-    assert r["count"]==2 and r["results"][0]["lot"]["starting_price_rub"]=="15000000.01"
-    assert r["results"][1]["match_type"]=="estimate" and r["results"][1]["lot"] is None
-    assert r["results"][0]["lot"]["updated_at"].endswith("Z")
-
-
 def test_api_database_failure_is_not_empty_success(client,monkeypatch):
     import app.api.search as module
     def unavailable(*args,**kwargs):
         raise OperationalError("secret SQL",{},Exception("secret password"))
     monkeypatch.setattr(module,"search",unavailable)
-    r=client.get("/api/v1/search",params=dict(city="Сочи",budget="1",area="1"))
+    r=client.get("/api/v1/search",params=dict(city="Сочи",budget="1",rooms="1"))
     assert r.status_code==503
     assert "secret" not in r.text and r.json()["error"]["fields"]=={}
 
@@ -294,13 +187,81 @@ def test_maximum_price_preserves_every_kopeck(db_session):
     assert search(db_session,query(budget="99999999999999.99"),now=NOW,config=CONFIG).count==1
 
 
-def test_fractional_upper_area_never_rounds_up(db_session):
-    c=complex_row(db_session)
-    lot_row(db_session,c,area_m2=Decimal("55.28"))
-    assert search(db_session,query(area="50.25"),now=NOW,config=CONFIG).count==0
-
-
 @pytest.mark.parametrize("url",["sqlite://", "sqlite:///:memory:", "sqlite:///file:test?mode=memory&uri=true", "mysql+pymysql://x@localhost/catalog"])
 def test_only_file_backed_sqlite_allowed(url):
     with pytest.raises(ValueError):
         Settings(database_url=url,demo_mode=False)
+
+
+def test_raw_database_uses_square_metres_and_rubles(db_session):
+    c=complex_row(db_session)
+    lot=lot_row(db_session,c,area_m2=Decimal("23.10"),starting_price_rub=Decimal("7530600.01"))
+    row=db_session.execute(text("SELECT area_m2, typeof(area_m2) AS area_type, starting_price_rub FROM apartment_lots WHERE id=:id"),{"id":lot.id}).mappings().one()
+    assert row["area_m2"]==23.1
+    assert row["area_type"]=="real"
+    assert row["starting_price_rub"]=="7530600.01"
+
+
+def test_price_order_is_numeric_not_lexicographic(db_session):
+    for name,price in [("expensive","10000000.00"),("cheaper","9000000.00")]:
+        c=complex_row(db_session,name)
+        lot_row(db_session,c,starting_price_rub=Decimal(price))
+    found=search(db_session,query(),now=NOW,config=CONFIG)
+    assert [r.complex.name for r in found.results]==["cheaper","expensive"]
+
+
+
+@pytest.mark.parametrize("field,value",[("budget","0"),("budget","-1"),("budget","NaN"),("budget","Infinity"),("budget","1e7"),("budget","1.001"),("budget","100000000000000"),("city",""),("city","x"*101),("rooms",""),("rooms","-1"),("rooms","5"),("rooms","1.0"),("rooms","1,2")])
+def test_query_validation(field,value):
+    params=dict(city="Сочи",budget="20000000",rooms="1")
+    params[field]=value
+    with pytest.raises(SearchValidationError): SearchQuery.from_params(list(params.items()))
+
+def test_multiselect_params_normalize_and_reject_removed_area():
+    params=[("city"," спб "),("budget","99999999999999.99"),("rooms","2"),("rooms","1"),("rooms","2")]
+    q=SearchQuery.from_params(params)
+    assert q.city=="Санкт-Петербург" and q.rooms==[1,2]
+    for extra in [[("area","50")],[("limit","3")],[("city","Сочи")],[("budget","1")]]:
+        with pytest.raises(SearchValidationError): SearchQuery.from_params(params+extra)
+    with pytest.raises(SearchValidationError): SearchQuery.from_params(params[:2])
+
+def test_rooms_union_studios_and_four_plus(db_session):
+    for rooms in [0,1,2,3,4,5]:
+        c=complex_row(db_session,str(rooms))
+        lot_row(db_session,c,rooms=rooms,area_m2=Decimal("20")+rooms*30)
+    assert [r.lot.rooms for r in search(db_session,query(rooms=[0,2]),now=NOW,config=CONFIG).results]==[0,2]
+    assert [r.lot.rooms for r in search(db_session,query(rooms=[4]),now=NOW,config=CONFIG).results]==[4,5]
+
+def test_cheapest_matching_lot_per_complex_and_global_price_order(db_session):
+    a=complex_row(db_session,"a")
+    lot_row(db_session,a,"wrong",rooms=3,starting_price_rub=Decimal("1"))
+    lot_row(db_session,a,"expensive",rooms=1,starting_price_rub=Decimal("10000000"),area_m2=Decimal("20"))
+    best=lot_row(db_session,a,"cheap",rooms=2,starting_price_rub=Decimal("9000000"),area_m2=Decimal("200"),updated_at=NOW-timedelta(days=1))
+    for name,price in [("b","8000000"),("c","20000000"),("d","20000000.01")]:
+        c=complex_row(db_session,name)
+        lot_row(db_session,c,rooms=2,starting_price_rub=Decimal(price))
+    r=search(db_session,query(rooms=[1,2]),now=NOW,config=CONFIG)
+    assert [x.complex.name for x in r.results]==["b","a","c"]
+    assert r.results[1].lot.id==best.id
+    assert [x.estimated_price_rub for x in r.results]==["8000000.00","9000000.00","20000000.00"]
+
+def test_no_estimate_without_specific_room_count(db_session):
+    complex_row(db_session,"estimate",min_price_m2=Decimal("1"),price_observed_on=NOW.date())
+    assert search(db_session,query(),now=NOW,config=CONFIG).results==[]
+    assert search(db_session,query(city="Казань"),now=NOW,config=CONFIG).results==[]
+
+def test_api_room_multiselect_and_price_order(client,db_session):
+    now=datetime.now(timezone.utc).replace(tzinfo=None)
+    for name,rooms,price in [("expensive",1,"10000000"),("cheap",2,"9000000"),("wrong",3,"1")]:
+        c=complex_row(db_session,name)
+        lot_row(db_session,c,rooms=rooms,starting_price_rub=Decimal(price),updated_at=now)
+    r=client.get("/api/v1/search",params=[("city","Сочи"),("budget","20000000"),("rooms","1"),("rooms","2")])
+    assert r.status_code==200
+    data=r.json()
+    assert data["query"]["rooms"]==[1,2] and "desired_area_m2" not in data["query"]
+    assert [x["complex"]["name"] for x in data["results"]]==["cheap","expensive"]
+    assert data["results"][0]["lot"]["area_m2"]=="50.00"
+    assert client.get("/api/v1/search?city=Сочи&budget=10&rooms=1&area=50").status_code==422
+    assert client.get("/api/v1/search?city=Сочи&budget=10").status_code==422
+    from app.api.search import router
+    assert len(app.routes)==1 and [r.path for r in router.routes]==["/api/v1/search"]

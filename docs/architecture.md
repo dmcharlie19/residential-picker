@@ -29,7 +29,7 @@
 - developer VARCHAR(255) NOT NULL.
 - district VARCHAR(255) NOT NULL.
 - housing_class VARCHAR(32) NOT NULL.
-- min_price_m2 INTEGER NULL — копейки за м²; CHECK на положительность и диапазон.
+- min_price_m2 TEXT NULL — точное десятичное значение рублей за м², два знака после точки; CHECK на формат и диапазон.
 - price_source_url TEXT NULL; price_observed_on DATE NULL; price_checked_on DATE NULL.
 - completion_status VARCHAR(32) NOT NULL — completed / under_construction / mixed / needs_verification.
 - completion_description TEXT NOT NULL — не терять сроки по корпусам.
@@ -46,8 +46,8 @@ price_checked_on — дата проверки ссылки. price_observed_on �
 - complex_id INTEGER NOT NULL FK → residential_complexes.id, ON DELETE RESTRICT.
 - external_id VARCHAR(150) NOT NULL — стабильный ID квартиры в источнике.
 - rooms INTEGER NOT NULL, CHECK 0..20; 0 = студия.
-- area_m2 INTEGER NOT NULL — сотые доли м², CHECK на положительность и диапазон.
-- starting_price_rub INTEGER NOT NULL — полная стартовая цена квартиры в копейках; CHECK на положительность и диапазон.
+- area_m2 NUMERIC(8,2) NOT NULL — площадь в м², без масштабирования; CHECK на положительность и диапазон.
+- starting_price_rub TEXT NOT NULL — полная цена квартиры в рублях с двумя знаками после точки; CHECK на формат и диапазон.
 - updated_at DATETIME NOT NULL — дата обновления предложения источником в UTC.
 - source_url TEXT NULL; building VARCHAR(100) NULL.
 - is_active BOOLEAN NOT NULL DEFAULT TRUE.
@@ -66,4 +66,8 @@ API только читает. Автообновление из сайтов и
 
 ## Хранение в файле
 
-data/residential-picker.sqlite3 — основная база, без отдельного сервера. Денежные и площадные поля физически INTEGER, ORM возвращает Decimal. Для расчётов в SQL зарегистрирована точная целочисленная функция estimate_cents. На каждом подключении включены внешние ключи, WAL и ожидание блокировки до 15 секунд. In-memory подключения запрещены.
+data/residential-picker.sqlite3 — основная база, без отдельного сервера. Площадь физически NUMERIC в м²; деньги — TEXT в рублях с двумя знаками после точки для точности. ORM возвращает Decimal. Денежная сортировка и сравнение выполняются численно через decimal_cents, а не лексикографически. Для расчётов в SQL зарегистрирована точная целочисленная функция estimate_cents. На каждом подключении включены внешние ключи, журнал DELETE и ожидание блокировки до 15 секунд. In-memory подключения запрещены.
+
+## Текущий контракт поиска
+
+Вход: город, бюджет, повторяемый rooms (0,1,2,3,4; 4 означает 4+). Вместо сравнения площади — ИЛИ по комнатности; площадь остаётся характеристикой лота. Выбирается самый дешёвый лот каждого ЖК, затем top-3 по возрастанию полной цены. Расчётные варианты без лота удалены. БД и импорт при изменении поиска не менялись.

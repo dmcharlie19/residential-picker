@@ -1,5 +1,9 @@
 import assert from 'node:assert/strict';
 import { chromium } from '@playwright/test';
+import { mkdir } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+const evidence=new URL('../../../docs/evidence/',import.meta.url);
+await mkdir(evidence,{recursive:true});
 const base=process.env.BASE_URL || 'http://127.0.0.1:8080';
 const browser=await chromium.launch({headless:true,...(process.env.BROWSER_EXECUTABLE_PATH?{executablePath:process.env.BROWSER_EXECUTABLE_PATH}:{})});
 const page=await browser.newPage({viewport:{width:1440,height:1000}});
@@ -15,11 +19,16 @@ try {
   checks.push('invalid form');
   await page.getByLabel('Бюджет, ₽').fill('20000000');
   await page.getByRole('button',{name:'Подобрать'}).click();
-  await page.getByRole('heading',{name:'Подходящих вариантов пока нет'}).waitFor();
-  const response=await page.request.get(base+'/api/v1/search?city='+encodeURIComponent('Сочи')+'&budget=20000000&area=50');
+  await page.getByRole('heading',{name:/Подходящие варианты/}).waitFor();
+  const response=await page.request.get(base+'/api/v1/search?city='+encodeURIComponent('Сочи')+'&budget=20000000&rooms=1&rooms=2');
   assert.equal(response.status(),200);
-  assert.equal((await response.json()).demo_mode,false);
-  checks.push('live SQLite API and empty catalog results');
+  const live=await response.json(); assert.equal(live.demo_mode,false); assert(live.count>0); assert(live.results.every(x=>[1,2].includes(x.lot.rooms))); const prices=live.results.map(x=>BigInt(x.estimated_price_rub.replace('.',''))); assert(prices.every((x,i)=>i===0||prices[i-1]<=x));
+  checks.push('live SQLite API, multiple rooms and ascending price');
+  await page.screenshot({path:fileURLToPath(new URL('desktop-room-search.png',evidence)),fullPage:true});
+  await page.setViewportSize({width:360,height:800});
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  await page.screenshot({path:fileURLToPath(new URL('mobile-room-search.png',evidence)),fullPage:true});
+  await page.setViewportSize({width:1440,height:1000});
   const results=[1,2,3].map(id=>({complex:{id,name:'Тестовый ЖК '+id,city:'Сочи',district:'Район',developer:'Застройщик',housing_class:'бизнес',completion_status:'completed',completion_description:'Сдан',completion_source_url:null},match_type:'lot',lot:{id,rooms:2,area_m2:'50.00',starting_price_rub:'15000000.01',updated_at:'2026-11-11T10:00:00Z',is_demo:false,source_url:null,building:null},matched_area_m2:'50.00',estimated_price_rub:'15000000.01',price_source_url:null,price_observed_on:'2026-11-11',warnings:[]}));
   // UI fixture only: synthetic rows are never written to the database.
   await page.route('**/api/v1/search?**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({demo_mode:false,count:3,results,warnings:[]})}));
@@ -30,6 +39,11 @@ try {
   await page.setViewportSize({width:360,height:800});
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   checks.push('360px layout');
+  await page.getByRole('checkbox',{name:'3 комнаты'}).check();
+  assert(await page.getByRole('checkbox',{name:'1 комната'}).isChecked());
+  assert(await page.getByRole('checkbox',{name:'2 комнаты'}).isChecked());
+  assert(await page.getByRole('checkbox',{name:'3 комнаты'}).isChecked());
+  checks.push('multiple checkbox selection');
   await page.unroute('**/api/v1/search?**');
   await page.route('**/api/v1/search?**',route=>route.fulfill({status:503,contentType:'application/json',body:'{}'}));
   await page.getByRole('button',{name:'Подобрать'}).click();

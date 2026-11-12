@@ -18,7 +18,7 @@ JSON-файлы помещаются в data. Реальных квартир в
 
 ## Файл и точность
 
-SQLite встроена в Python. Подключения включают foreign_keys=ON, WAL и busy_timeout=15000. Путь DATABASE_URL должен вести к файлу; in-memory базы не допускаются. В таблицах min_price_m2 и starting_price_rub — INTEGER в копейках, area_m2 — INTEGER в сотых м². ORM переводит их в Decimal; SQL-функция estimate_cents рассчитывает стоимость без float. Даты-время хранятся как UTC без timezone.
+SQLite встроена в Python. Подключения включают foreign_keys=ON, journal_mode=DELETE и busy_timeout=15000. Путь DATABASE_URL должен вести к файлу; in-memory базы не допускаются. В таблицах min_price_m2 и starting_price_rub — TEXT с точными суммами в рублях и двумя знаками после точки; area_m2 — NUMERIC(8,2) в м². ORM возвращает Decimal; функции decimal_cents и estimate_cents обеспечивают численные сравнения/сортировку денег и расчёт без float. Масштабирование применяется только внутри расчёта, не к хранимым значениям. Даты-время хранятся как UTC без timezone.
 
 ## Резервная копия
 
@@ -37,3 +37,7 @@ docker compose exec -T backend python -c 'import sqlite3; src=sqlite3.connect("/
 ## Тесты
 
 scripts/test-backend.ps1 устанавливает зафиксированные зависимости и запускает pytest. Docker и отдельная СУБД для этих тестов не нужны. Каждый запуск создаёт временный файл SQLite; рабочая база не очищается. Временные файлы управляются pytest.
+
+## Исправление единиц хранения
+
+Миграция 0002_explicit_units преобразует прежние сотые м² в м², копейки — в строки рублей. Она сохраняет ID, источники, даты, связи и все лоты. До применения создана data/residential-picker.before-unit-fix.sqlite3. Во время миграции файл должен быть закрыт в сторонних программах; интерфейс/API после миграции сохраняют прежние единицы.

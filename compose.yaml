@@ -4,7 +4,6 @@ services:
     build: ./backend
     environment:
       DATABASE_URL: sqlite:////app/storage/residential-picker.sqlite3
-      AREA_TOLERANCE_RATIO: "0.10"
       PRICE_MAX_AGE_DAYS: "30"
     ports: ["127.0.0.1:8000:8000"]
     volumes:

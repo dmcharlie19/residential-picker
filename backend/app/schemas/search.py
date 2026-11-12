@@ -12,44 +12,42 @@ class SearchValidationError(ValueError):
 class SearchQuery(BaseModel):
     city: str
     budget_rub: Decimal
-    desired_area_m2: Decimal
+    rooms: list[Literal[0, 1, 2, 3, 4]]
 
     @classmethod
     def from_params(cls, pairs):
-        values = {}
-        errors = {}
-        allowed = {"city", "budget", "area"}
+        values, errors, room_values = {}, {}, []
         for key, value in pairs:
-            if key not in allowed:
+            if key == "rooms":
+                room_values.append(value)
+            elif key not in {"city", "budget"}:
                 errors[key] = ["Неизвестный параметр"]
             elif key in values:
                 errors[key] = ["Параметр указан несколько раз"]
             else:
                 values[key] = value
-        for key in allowed - values.keys():
+        for key in {"city", "budget"} - values.keys():
             errors[key] = ["Обязательное поле"]
         city = values.get("city", "").strip()
         if "city" in values and not 1 <= len(city) <= 100:
             errors["city"] = ["Введите город длиной от 1 до 100 символов"]
-        parsed = {}
-        for field, maximum in (("budget", Decimal("99999999999999.99")), ("area", Decimal("999999.99"))):
-            if field not in values:
-                continue
-            raw = values[field]
+        budget = Decimal(0)
+        if "budget" in values:
+            raw = values["budget"]
             if len(raw) > 40 or not re.fullmatch(r"[0-9]+(?:\.[0-9]{1,2})?", raw):
-                errors[field] = ["Введите положительное число, не более двух знаков после точки"]
-                continue
-            number = Decimal(raw)
-            if number <= 0 or number > maximum:
-                errors[field] = ["Значение вне допустимого диапазона"]
+                errors["budget"] = ["Введите положительное число, не более двух знаков после точки"]
             else:
-                parsed[field] = number
+                budget = Decimal(raw)
+                if not 0 < budget <= Decimal("99999999999999.99"):
+                    errors["budget"] = ["Значение вне допустимого диапазона"]
+        if not room_values or any(value not in {"0", "1", "2", "3", "4"} for value in room_values):
+            errors["rooms"] = ["Выберите комнаты: студия, 1, 2, 3 или 4+; можно несколько"]
         if errors:
             raise SearchValidationError(errors)
         aliases = {"москва": "Москва", "сочи": "Сочи", "спб": "Санкт-Петербург",
                    "санкт петербург": "Санкт-Петербург", "санкт-петербург": "Санкт-Петербург"}
-        city = aliases.get(city.casefold(), city)
-        return cls(city=city, budget_rub=parsed["budget"], desired_area_m2=parsed["area"])
+        return cls(city=aliases.get(city.casefold(), city), budget_rub=budget,
+                   rooms=sorted({int(value) for value in room_values}))
 
 
 class ComplexResponse(BaseModel):
@@ -89,7 +87,7 @@ class MatchResponse(BaseModel):
 class QueryResponse(BaseModel):
     city: str
     budget_rub: str
-    desired_area_m2: str
+    rooms: list[int]
 
 
 class SearchResponse(BaseModel):

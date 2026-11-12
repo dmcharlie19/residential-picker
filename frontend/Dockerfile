@@ -1,5 +1,7 @@
 FROM node:20.20.0-alpine AS build
 WORKDIR /app
+ARG BASE_PATH=/
+ENV VITE_BASE_PATH=$BASE_PATH
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
