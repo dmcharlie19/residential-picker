@@ -2,6 +2,8 @@
 
 Python/FastAPI + React/TypeScript/Vite + SQLite в файле. Отдельный сервер базы данных и пароли не нужны.
 
+https://vibrationpanel.ru/residential/
+
 ## Запуск
 
 ```powershell
@@ -60,6 +62,3 @@ Backend-тесты работают с отдельным временным SQL
 
 [Архитектура](docs/architecture.md) · [API](docs/api.md) · [Алгоритм](docs/search.md) · [Обслуживание](docs/runbook.md) · [Проверки](docs/verification.md) · [План](PLAN.md)
 
-## Сервер
-
-Проект размещён в /home/jj/residential-picker на 192.168.31.170. Доменный маршрут: https://vibrationpanel.ru/residential/. Серверная конфигурация — compose.server.yaml; ресурсы и API используют префикс /residential/. Настройка и результаты проверки: deploy/README.md. Внешняя доступность стандартного 443 требует проверки проброса на роутере; приложение и HTTPS через gateway в LAN проверены.
